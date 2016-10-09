@@ -1,10 +1,24 @@
-package org.seleniumxml.test.commons.xml;
+/**
+ *  Xmlium, is an extension of selenium-java test framework allowing for tests
+ *  to be described in xml files.
+ *
+ *  The contents of this file are subject GNU Lesser General Public License
+ *  Version 3 or later, you may not use this file except in compliance
+ *  with the License.
+ *
+ *  You may obtain a copy of the License at:
+ *  https://www.gnu.org/licenses/lgpl.html
+ *
+ *  Software distributed under the License is distributed on an "AS IS" basis,
+ *  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ *  for the specific language governing rights and limitations under the
+ *  License.
+ */
+package org.xmlium.test.commons.xml;
 
-import java.io.File;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.math.BigDecimal;
-import java.net.URL;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,27 +48,27 @@ import org.openqa.selenium.internal.Locatable;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.seleniumxml.test.commons.SelectData;
-import org.seleniumxml.testsuite.ByCSSSelector;
-import org.seleniumxml.testsuite.ByXPath;
-import org.seleniumxml.testsuite.CheckEqualsToString;
-import org.seleniumxml.testsuite.Element;
-import org.seleniumxml.testsuite.Find;
-import org.seleniumxml.testsuite.Finds;
-import org.seleniumxml.testsuite.Index;
-import org.seleniumxml.testsuite.Middle;
-import org.seleniumxml.testsuite.ObjectFactory;
-import org.seleniumxml.testsuite.PrettySelect;
-import org.seleniumxml.testsuite.PrettySelectBy;
-import org.seleniumxml.testsuite.Repeat;
-import org.seleniumxml.testsuite.SelectBy;
-import org.seleniumxml.testsuite.StepType;
-import org.seleniumxml.testsuite.SwitchTo;
-import org.seleniumxml.testsuite.Test;
-import org.seleniumxml.testsuite.Values;
-import org.seleniumxml.testsuite.WaitFor;
 import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
+import org.xmlium.test.commons.SelectData;
+import org.xmlium.testsuite.ByCSSSelector;
+import org.xmlium.testsuite.ByXPath;
+import org.xmlium.testsuite.CheckEqualsToString;
+import org.xmlium.testsuite.Element;
+import org.xmlium.testsuite.Find;
+import org.xmlium.testsuite.Finds;
+import org.xmlium.testsuite.Index;
+import org.xmlium.testsuite.Middle;
+import org.xmlium.testsuite.ObjectFactory;
+import org.xmlium.testsuite.PrettySelect;
+import org.xmlium.testsuite.PrettySelectBy;
+import org.xmlium.testsuite.Repeat;
+import org.xmlium.testsuite.SelectBy;
+import org.xmlium.testsuite.StepType;
+import org.xmlium.testsuite.SwitchTo;
+import org.xmlium.testsuite.Test;
+import org.xmlium.testsuite.Values;
+import org.xmlium.testsuite.WaitFor;
 
 import com.google.common.base.Function;
 
@@ -256,7 +270,7 @@ public class XMLTestCase {
 			}
 		}
 		if (step.getSelect() != null) {
-			org.seleniumxml.testsuite.Select stepSelect = step.getSelect();
+			org.xmlium.testsuite.Select stepSelect = step.getSelect();
 
 			if (element != null && stepSelect.getSelectBy().getByIndex() != null) {
 				Index index = stepSelect.getSelectBy().getByIndex();
@@ -1086,7 +1100,7 @@ public class XMLTestCase {
 		return retValues;
 	}
 
-	protected List<String> getSelectValues(org.seleniumxml.testsuite.Select elem) {
+	protected List<String> getSelectValues(org.xmlium.testsuite.Select elem) {
 		List<String> retValues = new ArrayList<String>();
 
 		if (elem == null) {

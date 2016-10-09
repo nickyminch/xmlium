@@ -1,12 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<properties>
-		<seleniumxml.version>0.1.0</seleniumxml.version>
+		<xmlium.version>0.1.0</xmlium.version>
 	</properties>
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>seleniumxml</groupId>
-	<artifactId>seleniumxml</artifactId>
-	<version>${seleniumxml.version}</version>
+	<groupId>org.xmlium</groupId>
+	<artifactId>xmlium</artifactId>
+	<version>${xmlium.version}</version>
 
 	<dependencies>
 		<dependency>
@@ -40,38 +40,6 @@
 			<build>
 				<plugins>
 					<plugin>
-						<groupId>com.github.wvengen</groupId>
-						<artifactId>proguard-maven-plugin</artifactId>
-						<version>2.0.13</version>
-						<dependencies>
-							<dependency>
-								<groupId>net.sf.proguard</groupId>
-								<artifactId>proguard-base</artifactId>
-								<version>5.3</version>
-							</dependency>
-						</dependencies>
-						<executions>
-							<execution>
-								<phase>package</phase>
-								<goals>
-									<goal>proguard</goal>
-								</goals>
-							</execution>
-						</executions>
-						<configuration>
-							<proguardVersion>5.3</proguardVersion>
-							<options>
-								<option>-keep class * implements org.openqa.selenium.WebDriver</option>
-								<option>-keep public class
-									org.seleniumxml.test.commons.xml.XMLTest{public void test();}</option>
-							</options>
-							<libs>
-								<lib>${java.home}/lib/rt.jar</lib>
-								<lib>${java.home}/lib/jce.jar</lib>
-							</libs>
-						</configuration>
-					</plugin>
-					<plugin>
 						<groupId>org.codehaus.mojo</groupId>
 						<artifactId>jaxb2-maven-plugin</artifactId>
 						<version>2.2</version>
@@ -99,7 +67,7 @@
 								<argument>-Xcommons-lang</argument>
 							</arguments>
 							<!-- The package of your generated sources -->
-							<packageName>org.seleniumxml.testsuite</packageName>
+							<packageName>org.xmlium.testsuite</packageName>
 						</configuration>
 					</plugin>
 					<plugin>
@@ -114,9 +82,31 @@
 									<goal>rename</goal>
 								</goals>
 								<configuration>
-									<sourceFile>${project.build.directory}/seleniumxml-0.1.0_proguard_base.jar</sourceFile>
-									<destinationFile>../jens/worldportfolio/selenium-tests/app-bin/seleniumxml-0.1.0.jar</destinationFile>
+									<sourceFile>${project.build.directory}/xmlium-0.1.0.jar</sourceFile>
+									<destinationFile>../jens/worldportfolio/selenium-tests/app-bin/xmlium-0.1.0.jar</destinationFile>
 								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>com.mycila</groupId>
+    					<artifactId>license-maven-plugin</artifactId>
+    					<version>3.0</version>
+						<configuration>
+							<!-- Template location -->
+							<header>src/main/resources/classesHeader.txt</header>
+							<strictCheck>true</strictCheck>
+							<excludes>
+								<exclude>**/*.xml</exclude>
+								<exclude>**/*.txt</exclude>
+							</excludes>
+						</configuration>
+						<executions>
+							<execution>
+								<phase>package</phase>
+								<goals>
+									<goal>format</goal>
+								</goals>
 							</execution>
 						</executions>
 					</plugin>

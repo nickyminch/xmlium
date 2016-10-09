@@ -7,7 +7,7 @@
 	   <param name="append" value="false" />
 	   <param name="maxFileSize" value="1000KB" />
 	   <param name="maxBackupIndex" value="5" />
-	   <param name="file" value="${jboss.server.log.dir}/business.log" />
+	   <param name="file" value="xmlium.log" />
 	   <layout class="org.apache.log4j.PatternLayout">
 		<param name="ConversionPattern" 
 			value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n" />
@@ -27,11 +27,7 @@
 		<appender-ref ref="console" />
 	</root>
 
-	<logger name="org.seleniumxml">
-		<level value="debug" />
-	</logger>
-
-	<logger name="org.hibernate">
+	<logger name="org.xmlium">
 		<level value="debug" />
 	</logger>
 

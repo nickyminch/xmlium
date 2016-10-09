@@ -1,17 +1,31 @@
-package org.seleniumxml.test.tests;
+/**
+ *  Xmlium, is an extension of selenium-java test framework allowing for tests
+ *  to be described in xml files.
+ *
+ *  The contents of this file are subject GNU Lesser General Public License
+ *  Version 3 or later, you may not use this file except in compliance
+ *  with the License.
+ *
+ *  You may obtain a copy of the License at:
+ *  https://www.gnu.org/licenses/lgpl.html
+ *
+ *  Software distributed under the License is distributed on an "AS IS" basis,
+ *  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ *  for the specific language governing rights and limitations under the
+ *  License.
+ */
+package org.xmlium.test.tests;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.seleniumxml.test.commons.xml.XMLTestCase;
-import org.seleniumxml.test.commons.xml.XMLTestSuite;
-import org.seleniumxml.testsuite.ByXPath;
+import org.xmlium.test.commons.xml.XMLTestCase;
+import org.xmlium.testsuite.ByXPath;
 
 public class TestTests extends XMLTestCase {
 	private static final Logger logger = Logger.getLogger(TestTests.class.getSimpleName());

@@ -1,4 +1,20 @@
-package org.seleniumxml.test.commons.xml;
+/**
+ *  Xmlium, is an extension of selenium-java test framework allowing for tests
+ *  to be described in xml files.
+ *
+ *  The contents of this file are subject GNU Lesser General Public License
+ *  Version 3 or later, you may not use this file except in compliance
+ *  with the License.
+ *
+ *  You may obtain a copy of the License at:
+ *  https://www.gnu.org/licenses/lgpl.html
+ *
+ *  Software distributed under the License is distributed on an "AS IS" basis,
+ *  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ *  for the specific language governing rights and limitations under the
+ *  License.
+ */
+package org.xmlium.test.commons.xml;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -18,20 +34,21 @@ import javax.xml.transform.sax.SAXSource;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.FluentWait;
-import org.seleniumxml.test.commons.BaseTest;
-import org.seleniumxml.testsuite.Config;
-import org.seleniumxml.testsuite.ObjectFactory;
-import org.seleniumxml.testsuite.TestCase;
-import org.seleniumxml.testsuite.TestSuite;
 import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
+import org.xmlium.test.commons.BaseTest;
+import org.xmlium.testsuite.Config;
+import org.xmlium.testsuite.ObjectFactory;
+import org.xmlium.testsuite.TestCase;
+import org.xmlium.testsuite.TestSuite;
 
+@SuppressWarnings("restriction")
 public class XMLTestSuite extends BaseTest {
 	private static final Logger logger = Logger.getLogger(XMLTestSuite.class.getSimpleName());
 
 	private TestSuite testSuite = null;
 	private TestCase testCase = new TestCase();
-	private org.seleniumxml.test.commons.xml.XMLTestCase test = new org.seleniumxml.test.commons.xml.XMLTestCase();
+	private org.xmlium.test.commons.xml.XMLTestCase test = new org.xmlium.test.commons.xml.XMLTestCase();
 
 	private boolean errors = false;
 	
@@ -39,7 +56,7 @@ public class XMLTestSuite extends BaseTest {
 	
 	List<String> tests = new ArrayList<String>();
 
-	@SuppressWarnings({ "unchecked", "restriction" })
+	@SuppressWarnings({ "unchecked" })
 	void initFromXML(String xmlFileName) throws Exception {
 		JAXBContext jaxbContext = null;
 		Unmarshaller unmarshaller = null;
