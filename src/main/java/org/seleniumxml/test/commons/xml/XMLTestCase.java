@@ -1277,16 +1277,23 @@ public class XMLTestCase {
 
 	protected void checkMoveX(Element e, WebElement element) {
 		if (e.getMoveX() != null && e.getElement() != null) {
-			Actions actions = new Actions(getSuite().getDriver());
-			actions.click(element).build().perform();
 			int len = e.getMoveX().intValue();
 			Keys key = Keys.ARROW_RIGHT;
 			if (e.getMoveX().intValue() < 0) {
 				len = -e.getMoveX().intValue();
 				key = Keys.ARROW_LEFT;
 			}
+			logger.debug("len="+len);
 			for (int i = 0; i < len; i++) {
-				actions.sendKeys(key).build().perform();
+				logger.debug("in loop: i="+i);
+				try {
+					Thread.sleep(120);
+				} catch (Exception e2) {
+					// TODO: handle exception
+				}
+				element = findElement(e.getFinds());
+				element.sendKeys(key);
+				
 			}
 		}
 	}
