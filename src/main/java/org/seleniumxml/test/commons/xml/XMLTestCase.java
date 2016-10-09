@@ -328,8 +328,8 @@ public class XMLTestCase {
 											&& scrollAreaFinds.getFind().getByXPath() != null) {
 										text = scrollAreaFinds.getFind().getByXPath().getValue();
 									} else if (scrollAreaFinds.getWaitFor() != null
-											&& scrollAreaFinds.getWaitFor().getForXPath() != null) {
-										text = scrollAreaFinds.getWaitFor().getForXPath().getValue();
+											&& scrollAreaFinds.getWaitFor().getByXPath() != null) {
+										text = scrollAreaFinds.getWaitFor().getByXPath().getValue();
 									}
 
 									throw new RuntimeException("scrollArea not found: " + text);
@@ -434,8 +434,8 @@ public class XMLTestCase {
 											&& scrollAreaFinds.getFind().getByXPath() != null) {
 										scrollAreaXPath = scrollAreaFinds.getFind().getByXPath().getValue();
 									} else if (scrollAreaFinds.getWaitFor() != null
-											&& scrollAreaFinds.getWaitFor().getForXPath() != null) {
-										scrollAreaXPath = scrollAreaFinds.getWaitFor().getForXPath().getValue();
+											&& scrollAreaFinds.getWaitFor().getByXPath() != null) {
+										scrollAreaXPath = scrollAreaFinds.getWaitFor().getByXPath().getValue();
 									}
 									// throw new RuntimeException("scrollArea
 									// not found: " + text);
@@ -772,25 +772,25 @@ public class XMLTestCase {
 	}
 
 	protected By getBy(WaitFor wFor) {
-		if (wFor.getForId() != null) {
-			logger.debug(wFor.getForId().getValue());
-			return By.id(wFor.getForId().getValue());
+		if (wFor.getById() != null) {
+			logger.debug(wFor.getById().getValue());
+			return By.id(wFor.getById().getValue());
 		}
-		if (wFor.getForLinkText() != null) {
-			String value = checkValue(wFor.getForLinkText().getValue());
+		if (wFor.getByLinkText() != null) {
+			String value = checkValue(wFor.getByLinkText().getValue());
 			return By.linkText(value);
 		}
-		if (wFor.getForName() != null) {
-			return By.name(wFor.getForName().getValue());
+		if (wFor.getByName() != null) {
+			return By.name(wFor.getByName().getValue());
 		}
-		if (wFor.getForXPath() != null) {
-			if (wFor.getForXPath().getValue() != null
-					&& wFor.getForXPath().getValue().equals("//button[@id='etfselection-form:saveButton']")) {
+		if (wFor.getByXPath() != null) {
+			if (wFor.getByXPath().getValue() != null
+					&& wFor.getByXPath().getValue().equals("//button[@id='etfselection-form:saveButton']")) {
 				logger.debug("wFor=" + wFor);
 			}
-			return getByXPath(wFor.getForXPath());
-		} else if (wFor.getForCssSelector() != null) {
-			return getBy(wFor.getForCssSelector());
+			return getByXPath(wFor.getByXPath());
+		} else if (wFor.getByCssSelector() != null) {
+			return getBy(wFor.getByCssSelector());
 		} else {
 			throw new IllegalArgumentException("unknown: " + wFor);
 		}
@@ -1034,23 +1034,23 @@ public class XMLTestCase {
 
 		WaitFor waitFor = finds.getWaitFor();
 		if (waitFor != null) {
-			if (waitFor.getForId() != null && waitFor.getForId().getValue() != null
-					&& !waitFor.getForId().getValue().isEmpty()) {
-				retValues.add(waitFor.getForId().getValue());
+			if (waitFor.getById() != null && waitFor.getById().getValue() != null
+					&& !waitFor.getById().getValue().isEmpty()) {
+				retValues.add(waitFor.getById().getValue());
 			}
-			if (waitFor.getForLinkText() != null && waitFor.getForLinkText().getValue() != null
-					&& !waitFor.getForLinkText().getValue().isEmpty()) {
-				retValues.add(waitFor.getForLinkText().getValue());
-			}
-
-			if (waitFor.getForName() != null && waitFor.getForName().getValue() != null
-					&& !waitFor.getForName().getValue().isEmpty()) {
-				retValues.add(waitFor.getForName().getValue());
+			if (waitFor.getByLinkText() != null && waitFor.getByLinkText().getValue() != null
+					&& !waitFor.getByLinkText().getValue().isEmpty()) {
+				retValues.add(waitFor.getByLinkText().getValue());
 			}
 
-			if (waitFor.getForXPath() != null && waitFor.getForXPath().getValue() != null
-					&& !waitFor.getForXPath().getValue().isEmpty()) {
-				retValues.add(waitFor.getForXPath().getValue());
+			if (waitFor.getByName() != null && waitFor.getByName().getValue() != null
+					&& !waitFor.getByName().getValue().isEmpty()) {
+				retValues.add(waitFor.getByName().getValue());
+			}
+
+			if (waitFor.getByXPath() != null && waitFor.getByXPath().getValue() != null
+					&& !waitFor.getByXPath().getValue().isEmpty()) {
+				retValues.add(waitFor.getByXPath().getValue());
 			}
 		}
 		return retValues;

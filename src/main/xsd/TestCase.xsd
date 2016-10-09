@@ -90,11 +90,11 @@
     
     <complexType name="WaitFor">
     	<choice maxOccurs="1" minOccurs="1">
-    		<element name="forId" type="tns:ById"></element>
-    		<element name="forName" type="tns:ByName"></element>
-    		<element name="forLinkText" type="tns:ByLinkText"></element>
-    		<element name="forXPath" type="tns:ByXPath"></element>
-     		<element name="forCssSelector" type="tns:ByCSSSelector"></element>
+	    		<element name="byId" type="tns:ById"></element>
+	    		<element name="byName" type="tns:ByName"></element>
+	    		<element name="byLinkText" type="tns:ByLinkText"></element>
+	    		<element name="byXPath" type="tns:ByXPath"></element>
+	    		<element name="byCssSelector" type="tns:ByCSSSelector"></element>
     	</choice>
     	<attribute name="catchException" default="false" type="boolean"/>
     </complexType>

@@ -158,6 +158,7 @@ public class XMLTestSuite extends BaseTest {
 
 		for (String testFile : tests) {
 			test.reset();
+			logger.info("Running test file: "+testFile);
 			test.initFromXML(this, testFile);
 			test.test();
 		}
