@@ -14,12 +14,12 @@
  *  for the specific language governing rights and limitations under the
  *  License.
  */
-package org.xmlium.test.selenium;
+package org.xmlium.test.xmlium;
 
 import org.junit.Test;
 import org.xmlium.test.commons.xml.XMLTest;
 
-public class SeleniumTest {
+public class XliumTest {
 
 
 	@Test
