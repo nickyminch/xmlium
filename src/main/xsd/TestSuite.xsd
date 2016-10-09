@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/TestSuite"
+	xmlns:tns="http://www.example.org/TestSuite" elementFormDefault="qualified">
+
+    <complexType name="TestSuite">
+    	<sequence>
+    		<element name="testCase" type="tns:TestCase"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="testSuite" type="tns:TestSuite"></element>
+
+    <complexType name="TestCase">
+    	<sequence>
+    		<element name="initialConfig" type="tns:Config"></element>
+    		<element name="currentTest" type="anyURI" minOccurs="1" maxOccurs="unbounded"></element>
+    		<element name="get" type="tns:Get"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="Config">
+    	<sequence>
+    		<element name="pathString" type="string"></element>
+    		<element name="driverClass" type="string"></element>
+    		<element name="timeout" type="long"></element>
+    		<element name="timeUnit" type="string"></element>
+    		<element name="url" type="string"></element>
+    		<element name="fluentWaitIgnore" type="tns:FluentWaitIgnore"></element>
+    		<element name="locale" type="string"></element>
+    		<element name="delay" type="integer"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="FluentWaitIgnore">
+    	<sequence>
+    			<element name="exceptionClassNames" type="tns:FluentWaitExceptionsList"></element>
+    	</sequence>
+    </complexType>
+
+     <simpleType name="FluentWaitExceptionsList">
+    		<list itemType="string"/>
+    </simpleType>
+
+    <complexType name="Get"></complexType>
+</schema>

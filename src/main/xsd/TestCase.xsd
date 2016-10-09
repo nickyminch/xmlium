@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/TestCase" xmlns:tns="http://www.example.org/TestCase" elementFormDefault="qualified">
+    <complexType name="Test">
+    	<choice>
+    		<element name="Steps" type="tns:StepType" maxOccurs="unbounded"></element>
+    		<element name="repeat" type="tns:Repeat"/>
+    	</choice>
+    </complexType>
+
+    <element name="test" type="tns:Test"></element>
+
+	<complexType name="Repeat">
+		<sequence>
+			<element name="repeatCount" type="integer"/>
+			<element name="Steps" type="tns:StepType" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+    <complexType name="StepType">
+    	<sequence>
+	    	<choice maxOccurs="1" minOccurs="1">
+	    		<element name="element" type="tns:Element"></element>
+	    		<element name="select" type="tns:Select"></element>
+	    		<element name="prettySelect" type="tns:PrettySelect"></element>
+	    		<element name="switchTo" type="tns:SwitchTo"></element>
+	    	</choice>
+	    	<element name="load" type="tns:Load"  maxOccurs="1" minOccurs="0"></element>
+	    	<element name="sleepAfter" type="integer"  maxOccurs="1" minOccurs="0"></element>
+	    	<element name="scrollX" type="integer"  maxOccurs="1" minOccurs="0"></element>
+	    	<element name="scrollY" type="integer"  maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+     <complexType name="Element">
+    	<sequence>
+    		<element name="finds" type="tns:Finds"></element>
+    		<element name="storeValue" type="tns:StoreValue" minOccurs="0"></element>
+    		<element name="setValue" type="tns:SetValue" minOccurs="0"></element>
+    		<element name="sendKeys" type="tns:SendKeys"
+    			minOccurs="0">
+    		</element>
+    		<element name="click" type="boolean" default="true"
+    			minOccurs="0">
+    		</element>
+    		<element name="moveX" type="int"
+    			minOccurs="0" maxOccurs="1">
+    		</element>
+    		<element name="element" type="tns:Element"/>
+    		<element name="changeState" type="tns:WaitFor"/>
+    		<element name="checkTextEquals" type="tns:CheckEqualsToString" minOccurs="0"></element>
+    		<element name="store" type="tns:Store" minOccurs="0"></element>
+    	</sequence>
+    	<attribute name="checkNullElement" type="boolean" default="false"/>
+    </complexType>
+
+    <complexType name="Finds">
+    	<choice>
+    		<element name="find" type="tns:Find"></element>
+    		<element name="waitFor" type="tns:WaitFor"></element>
+    	</choice>
+    </complexType>
+ 
+    <complexType name="Find">
+	    	<choice maxOccurs="1" minOccurs="1">
+	    		<element name="byId" type="tns:ById"></element>
+	    		<element name="byName" type="tns:ByName"></element>
+	    		<element name="byLinkText" type="tns:ByLinkText"></element>
+	    		<element name="byXPath" type="tns:ByXPath"></element>
+	    		<element name="byCssSelector" type="tns:ByCSSSelector"></element>
+	    	</choice>
+    	<attribute name="catchException" default="false" type="boolean"/>
+    </complexType>
+
+    <complexType name="ById">
+    	<sequence>
+    		<element name="value" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="ByLinkText">
+    	<sequence>
+    		<element name="value" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="ByName">
+    	<sequence>
+    		<element name="value" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="WaitFor">
+    	<choice maxOccurs="1" minOccurs="1">
+    		<element name="forId" type="tns:ById"></element>
+    		<element name="forName" type="tns:ByName"></element>
+    		<element name="forLinkText" type="tns:ByLinkText"></element>
+    		<element name="forXPath" type="tns:ByXPath"></element>
+     		<element name="forCssSelector" type="tns:ByCSSSelector"></element>
+    	</choice>
+    	<attribute name="catchException" default="false" type="boolean"/>
+    </complexType>
+
+    <complexType name="SwitchTo">
+    	<choice maxOccurs="1" minOccurs="1">
+    		<element name="frame" type="tns:Frame"></element>
+    		<element name="alert" type="tns:Alert"></element>
+    	</choice>
+    </complexType>
+
+    <complexType name="Frame">
+    	<sequence>
+    		<element name="value" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="Alert">
+    	<sequence>
+    		<element name="accept" type="boolean"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="ByXPath">
+    	<choice>
+    		<element name="value" type="string"/>
+    		<element name="indexedValue" type="string"/>
+    	</choice>
+    </complexType>
+
+    <complexType name="ByCSSSelector">
+    	<sequence>
+    		<element name="value" type="string"/>
+    	</sequence>
+    </complexType>
+
+    <complexType name="SendKeys">
+    	<sequence>
+    		<element name="value" type="string"></element>
+    		<element name="removeOld" type="boolean"></element>
+    		<element name="pressEnter" type="boolean"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="Click"></complexType>
+    
+     <complexType name="Store">
+     	<sequence>
+     		<element name="key" type="string" minOccurs="1" maxOccurs="1" />
+     	</sequence>
+     </complexType>
+     
+     <complexType name="StoreValue">
+     	<sequence>
+     		<element name="key" type="string" minOccurs="1" maxOccurs="1" />
+     	</sequence>
+     </complexType>
+
+     <complexType name="SetValue">
+     	<sequence>
+     		<element name="keys" type="tns:Values" minOccurs="1" maxOccurs="1" />
+     		<element name="valueExpression" type="string" minOccurs="1" maxOccurs="1"/>
+     	</sequence>
+     </complexType>
+
+     <complexType name="Values">
+     	<sequence>
+     		<element name="key" type="string" minOccurs="1" maxOccurs="2" />
+     	</sequence>
+     </complexType>
+
+     <complexType name="Load">
+     	<sequence>
+     		<element name="key" type="string" minOccurs="1" maxOccurs="1" />
+     	</sequence>
+     </complexType>
+
+    <complexType name="Select">
+    	<sequence>
+    		<element name="finds" type="tns:Finds"></element>
+    		<element name="selectBy" type="tns:SelectBy"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="PrettySelect">
+    	<sequence>
+    		<element name="finds" type="tns:Finds"></element>
+    		<element name="selectBy" type="tns:PrettySelectBy"></element>
+    	</sequence>
+    </complexType>
+
+     <complexType name="SelectBy">
+    	<choice>
+    		<element name="byVisibleText" type="string"></element>
+    		<element name="byIndex" type="tns:Index"></element>
+    	</choice>
+    </complexType>
+ 
+    <complexType name="PrettySelectBy">
+    	<sequence>
+    		<choice>
+    			<element name="byVisibleText" type="string"></element>
+    			<element name="byIndex" type="tns:Index"></element>
+    		</choice>
+    		<element name="arrowArea" type="tns:Finds" minOccurs="1" maxOccurs="1"/>
+    		<element name="scrollArea" type="tns:Finds" minOccurs="1" maxOccurs="1"/>
+    		<element name="optionsTag" type="string" minOccurs="1" maxOccurs="1"/>
+    		<element name="optionsClasses" type="string" minOccurs="1" maxOccurs="1"/>
+    	</sequence>
+    </complexType>
+
+	<complexType name="Index">
+    	<choice>
+    		<element name="next" type="boolean"></element>
+    		<element name="previous" type="boolean"></element>
+    		<element name="middle" type="tns:Middle"></element>
+    		<element name="first" type="boolean"></element>
+			<element name="last" type="boolean"></element>
+    	</choice>
+    </complexType>
+    
+    <complexType name="Middle">
+    	<sequence>
+			<element name="round" type="tns:Round" minOccurs="1" maxOccurs="1"/>
+    	</sequence>
+   	</complexType>
+    
+	<complexType name="Round">
+    	<choice>
+    		<element name="up" type="boolean"></element>
+    		<element name="down" type="boolean"></element>
+    		<element name="no" type="boolean"></element>
+    	</choice>
+    </complexType>
+
+    <complexType name="CheckEqualsToString">
+    	<sequence>
+    		<element name="value" type="string"></element>
+    	</sequence>
+    </complexType>
+
+</schema>
