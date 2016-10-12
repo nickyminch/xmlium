@@ -19,7 +19,7 @@ package org.xmlium.test.xmlium;
 import org.junit.Test;
 import org.xmlium.test.commons.xml.XMLTest;
 
-public class XliumTest {
+public class XmliumTest {
 
 
 	@Test
