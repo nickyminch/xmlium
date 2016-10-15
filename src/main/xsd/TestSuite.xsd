@@ -22,36 +22,36 @@
 
     <complexType name="TestSuite">
     	<sequence>
-    		<element name="testCase" type="tns:TestCase"></element>
+    		<element name="testCase" type="tns:TestCase"/>
     	</sequence>
     </complexType>
 
-    <element name="testSuite" type="tns:TestSuite"></element>
+    <element name="testSuite" type="tns:TestSuite"/>
 
     <complexType name="TestCase">
     	<sequence>
-    		<element name="initialConfig" type="tns:Config"></element>
-    		<element name="currentTest" type="anyURI" minOccurs="1" maxOccurs="unbounded"></element>
-    		<element name="get" type="tns:Get"></element>
+    		<element name="initialConfig" type="tns:Config"/>
+    		<element name="currentTest" type="anyURI" minOccurs="1" maxOccurs="unbounded"/>
+    		<element name="get" type="tns:Get"/>
     	</sequence>
     </complexType>
 
     <complexType name="Config">
     	<sequence>
-    		<element name="pathString" type="string"></element>
-    		<element name="driverClass" type="string"></element>
-    		<element name="timeout" type="long"></element>
-    		<element name="timeUnit" type="string"></element>
-    		<element name="url" type="string"></element>
-    		<element name="fluentWaitIgnore" type="tns:FluentWaitIgnore"></element>
-    		<element name="locale" type="string"></element>
-    		<element name="delay" type="integer"></element>
+    		<element name="pathString" type="string"/>
+    		<element name="driverClass" type="string"/>
+    		<element name="timeout" type="long"/>
+    		<element name="timeUnit" type="string"/>
+    		<element name="url" type="string"/>
+    		<element name="fluentWaitIgnore" type="tns:FluentWaitIgnore"/>
+    		<element name="locale" type="string"/>
+    		<element name="delay" type="integer"/>
     	</sequence>
     </complexType>
 
     <complexType name="FluentWaitIgnore">
     	<sequence>
-    			<element name="exceptionClassNames" type="tns:FluentWaitExceptionsList"></element>
+    			<element name="exceptionClassNames" type="tns:FluentWaitExceptionsList"/>
     	</sequence>
     </complexType>
 

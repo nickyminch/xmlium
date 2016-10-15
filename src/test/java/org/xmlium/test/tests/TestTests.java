@@ -22,13 +22,21 @@ import static org.junit.Assert.fail;
 import java.util.regex.Matcher;
 
 import org.apache.log4j.Logger;
+import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.xmlium.test.commons.xml.XMLTestCase;
+import org.xmlium.test.commons.xml.XMLTestSteps;
+import org.xmlium.test.commons.xml.XMLTestSuite;
 import org.xmlium.testsuite.ByXPath;
+import org.xmlium.testsuite.StepType;
+import org.xmlium.testsuite.Steps;
+import org.xmlium.testsuite.StepsType;
 
-public class TestTests extends XMLTestCase {
+public class TestTests extends XMLTestSteps {
 	private static final Logger logger = Logger.getLogger(TestTests.class.getSimpleName());
+	static StepsType steps;
+	static XMLTestSuite suite = new XMLTestSuite();
 //	public static void main(String[] args) {
 //		TestTests tt = new TestTests();
 //		tt.extractLocale();
@@ -47,7 +55,15 @@ public class TestTests extends XMLTestCase {
 //			System.err.println("OK!");
 //		}
 //	}
-	
+	static{
+		steps = new StepsType();
+		Steps s = new Steps();
+		s.getStepOrStepsFile().add(new StepsType());
+		steps.getSteps().add(s);
+	}
+	public TestTests() throws Exception{
+		super(TestTests.suite, TestTests.steps);
+	}
 	@Test
 	public void testCheckValue(){
 		logger.info(checkValue("expression:java.lang.Math.random()*1000"));
@@ -120,5 +136,10 @@ public class TestTests extends XMLTestCase {
 		assertEquals(false, valueMatcher7.matches());
 		Matcher valueMatcher8 = valueExpressionStringPattern1.matcher(str4);
 		assertEquals(false, valueMatcher8.matches());
+	}
+	@Test
+	public void valueSpaces(){
+		String s = ") and contains(text(), ' Sonstige Anlage gespeichert')]";
+		assertEquals(") and contains(text(), 'Sonstige Anlage gespeichert')]", unformatValueRemoveSpaces(s));
 	}
 }
