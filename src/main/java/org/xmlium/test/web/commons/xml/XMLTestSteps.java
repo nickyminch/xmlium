@@ -14,7 +14,7 @@
  *  for the specific language governing rights and limitations under the
  *  License.
  */
-package org.xmlium.test.commons.xml;
+package org.xmlium.test.web.commons.xml;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -48,7 +48,7 @@ import org.openqa.selenium.internal.Locatable;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.xmlium.test.commons.SelectData;
+import org.xmlium.test.web.commons.SelectData;
 import org.xmlium.testsuite.ByCSSSelector;
 import org.xmlium.testsuite.ByXPath;
 import org.xmlium.testsuite.CheckEqualsToString;
@@ -70,6 +70,7 @@ import org.xmlium.testsuite.WaitFor;
 
 import com.google.common.base.Function;
 
+@SuppressWarnings("restriction")
 public class XMLTestSteps {
 	private static final Logger logger = Logger.getLogger(XMLTestSteps.class.getSimpleName());
 	private XMLTestSuite suite = null;
@@ -1244,17 +1245,19 @@ public class XMLTestSteps {
 		return suite;
 	}
 	
-	protected String unformatValue(String v){
+	public static String unformatValue(String v){
 		String s = unformatValueRemoveFormat(v);
 		s = unformatValueRemoveSpaces(s);
 		return s;
 	}
-	protected String unformatValueRemoveFormat(String v){
-		Pattern p  = Pattern.compile("([.&&^\n&&^\t]*)(\n\t*)(\t*)(.*)");
+
+	protected static final Pattern removeTabsAndNewLinesPattern  = Pattern.compile("([.&&^\n&&^\t]*)(\n\t*)(\t*)(.*)");
+
+	public static String unformatValueRemoveFormat(String v){
 		Matcher m = null;
 		logger.debug("value before: '"+v.replaceAll("\n", "\\n").replaceAll("\t", "\\t").replaceAll("\f", "\\f")+"'");
 		String s = v;
-		m =  p.matcher(s);
+		m =  removeTabsAndNewLinesPattern.matcher(s);
 		if(m.matches()){
 			String a = m.group(1);
 			String b = m.group(4);
@@ -1279,9 +1282,9 @@ public class XMLTestSteps {
 	}
 
 	
-	protected static Pattern removeSpacesPattern  = Pattern.compile("(.*)(')( *)([\\w \\d]*)( *)(')(.*)");
+	protected static final Pattern removeSpacesPattern  = Pattern.compile("(.*)(')( *)([\\w \\d]*)( *)(')(.*)");
 
-	protected String unformatValueRemoveSpaces(String v){
+	public static String unformatValueRemoveSpaces(String v){
 		logger.debug("value before: \""+v+"\"");
 		Matcher m =  removeSpacesPattern.matcher(v);
 		String s = v;

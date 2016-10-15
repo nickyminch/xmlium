@@ -14,7 +14,7 @@
  *  for the specific language governing rights and limitations under the
  *  License.
  */
-package org.xmlium.test.commons.xml;
+package org.xmlium.test.web.commons.xml;
 
 import java.util.List;
 

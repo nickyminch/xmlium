@@ -14,9 +14,17 @@
  *  for the specific language governing rights and limitations under the
  *  License.
  */
-package org.xmlium.test.commons;
+package org.xmlium.test.web.xmlium;
 
-public class SelectData {
-	public int selectIndex = -1;
-	public int selectLength = -1;
+import org.junit.Test;
+import org.xmlium.test.web.commons.xml.XMLTest;
+
+public class XmliumTest {
+
+
+	@Test
+	public void test() throws Exception {
+		XMLTest test = new XMLTest();
+		test.test();
+	}
 }

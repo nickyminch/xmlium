@@ -14,7 +14,7 @@
  *  for the specific language governing rights and limitations under the
  *  License.
  */
-package org.xmlium.test.commons.xml;
+package org.xmlium.test.web.commons.xml;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -36,8 +36,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
-import org.xmlium.test.commons.BaseTest;
-import org.xmlium.testsuite.Config;
+import org.xmlium.test.web.commons.BaseTest;
 import org.xmlium.testsuite.ObjectFactory;
 import org.xmlium.testsuite.TestCase;
 import org.xmlium.testsuite.TestSuite;
@@ -48,7 +47,7 @@ public class XMLTestSuite extends BaseTest {
 
 	private TestSuite testSuite = null;
 	private TestCase testCase = new TestCase();
-	private org.xmlium.test.commons.xml.XMLTestCase test = new org.xmlium.test.commons.xml.XMLTestCase();
+	private org.xmlium.test.web.commons.xml.XMLTestCase test = new org.xmlium.test.web.commons.xml.XMLTestCase();
 
 	private boolean errors = false;
 	
@@ -89,49 +88,13 @@ public class XMLTestSuite extends BaseTest {
 			testSuite = unmarshalledObject.getValue();
 			if (testSuite != null) {
 				testCase = testSuite.getTestCase();
-				Config config = testCase.getInitialConfig();
-				setDriver((WebDriver) Class.forName(config.getDriverClass()).newInstance());
-				setTimeout(config.getTimeout());
-				setUrl(config.getUrl());
-				if (config.getLocale() != null && !config.getLocale().isEmpty()) {
-					setLocale(new Locale(config.getLocale().substring(0, config.getLocale().indexOf('_')),
-							config.getLocale().substring(config.getLocale().indexOf('_') + 1)));
-					setCurrencyFormat(NumberFormat.getInstance(getLocale()));
-					((DecimalFormat) getCurrencyFormat()).setParseBigDecimal(true);
-				}
-				if(config.getDelay()!=null){
-					setDelay(config.getDelay().longValue());
-				}
-				System.out.println("URL: " + getUrl());
-				setTimeoutUnits(TimeUnit.valueOf(config.getTimeUnit()));
-				setPathPatternString(config.getPathString());
-				setFluentWait(new FluentWait<WebDriver>(getDriver()).withTimeout(getTimeout(), getTimeoutUnits())
-						.pollingEvery(200, TimeUnit.MILLISECONDS));
-				Iterator<String> iterClassNames = config.getFluentWaitIgnore().getExceptionClassNames().iterator();
-				while (iterClassNames.hasNext()) {
-					String className = iterClassNames.next();
-					Class<? extends Throwable> c = (Class<? extends Throwable>)Class.forName(className);
-					getFluentWait().ignoring(c);
-				}
+				String configFile = testCase.getConfigFile();
+				XMLTestConfig config = new XMLTestConfig(this, configFile);
 				// extractLocale();
 				loadBundles();
 				getTests().addAll(testSuite.getTestCase().getCurrentTest());
 			}
 		} catch (JAXBException e) {
-			// TODO Auto-generated catch block
-			logger.debug(e.getMessage(), e);
-			errors = true;
-			throw e;
-		} catch (InstantiationException e) {
-			// TODO Auto-generated catch block
-			logger.debug(e.getMessage(), e);
-			errors = true;
-			throw e;
-		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
-			logger.debug(e.getMessage(), e);
-			errors = true;
-		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			logger.debug(e.getMessage(), e);
 			errors = true;

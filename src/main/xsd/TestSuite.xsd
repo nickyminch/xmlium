@@ -17,9 +17,11 @@
      License.
 
 -->
-<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/TestSuite"
-	xmlns:tns="http://www.example.org/TestSuite" elementFormDefault="qualified">
-
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.xmlium.org/TestSuite"
+	xmlns:tns="http://www.xmlium.org/TestSuite" elementFormDefault="qualified"
+	xmlns:config="http://www.xmlium.org/TestConfig">
+<import schemaLocation="TestConfig.xsd" 
+           namespace="http://www.xmlium.org/TestConfig"/>
     <complexType name="TestSuite">
     	<sequence>
     		<element name="testCase" type="tns:TestCase"/>
@@ -30,34 +32,13 @@
 
     <complexType name="TestCase">
     	<sequence>
-    		<element name="initialConfig" type="tns:Config"/>
+    		<element name="configFile" type="anyURI" minOccurs="1" maxOccurs="1"/>
     		<element name="currentTest" type="anyURI" minOccurs="1" maxOccurs="unbounded"/>
     		<element name="get" type="tns:Get"/>
     	</sequence>
     </complexType>
 
-    <complexType name="Config">
-    	<sequence>
-    		<element name="pathString" type="string"/>
-    		<element name="driverClass" type="string"/>
-    		<element name="timeout" type="long"/>
-    		<element name="timeUnit" type="string"/>
-    		<element name="url" type="string"/>
-    		<element name="fluentWaitIgnore" type="tns:FluentWaitIgnore"/>
-    		<element name="locale" type="string"/>
-    		<element name="delay" type="integer"/>
-    	</sequence>
-    </complexType>
 
-    <complexType name="FluentWaitIgnore">
-    	<sequence>
-    			<element name="exceptionClassNames" type="tns:FluentWaitExceptionsList"/>
-    	</sequence>
-    </complexType>
-
-     <simpleType name="FluentWaitExceptionsList">
-    		<list itemType="string"/>
-    </simpleType>
 
     <complexType name="Get"></complexType>
 </schema>

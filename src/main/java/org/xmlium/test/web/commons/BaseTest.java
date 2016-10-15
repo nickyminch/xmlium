@@ -14,7 +14,7 @@
  *  for the specific language governing rights and limitations under the
  *  License.
  */
-package org.xmlium.test.commons;
+package org.xmlium.test.web.commons;
 
 import java.io.File;
 import java.net.MalformedURLException;

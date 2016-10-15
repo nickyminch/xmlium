@@ -18,9 +18,9 @@
 
 -->
 
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema"  targetNamespace="http://www.example.org/TestCase" xmlns:tns="http://www.example.org/TestCase" elementFormDefault="qualified" xmlns:steps="http://www.example.org/TestSteps">
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema"  targetNamespace="http://www.xmlium.org/TestCase" xmlns:tns="http://www.xmlium.org/TestCase" elementFormDefault="qualified" xmlns:steps="http://www.xmlium.org/TestSteps">
 	<xs:import schemaLocation="TestSteps.xsd" 
-           namespace="http://www.example.org/TestSteps"/>
+           namespace="http://www.xmlium.org/TestSteps"/>
     <xs:complexType name="Test">
     	<xs:choice>
     		<xs:element name="testSteps" type="steps:StepsType" minOccurs="1" maxOccurs="1"/>
