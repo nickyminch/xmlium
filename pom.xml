@@ -5,7 +5,7 @@
 	</properties>
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.xmlium</groupId>
-	<artifactId>xmlium</artifactId>
+	<artifactId>xmlium-web</artifactId>
 	<version>${xmlium.version}</version>
 
 	<dependencies>
@@ -82,8 +82,8 @@
 									<goal>rename</goal>
 								</goals>
 								<configuration>
-									<sourceFile>${project.build.directory}/xmlium-0.1.0.jar</sourceFile>
-									<destinationFile>../jens/worldportfolio/selenium-tests/app-bin/xmlium-0.1.0.jar</destinationFile>
+									<sourceFile>${project.build.directory}/xmlium-web-0.1.0.jar</sourceFile>
+									<destinationFile>../jens/worldportfolio/selenium-tests/app-bin/xmlium-web-0.1.0.jar</destinationFile>
 								</configuration>
 							</execution>
 						</executions>
