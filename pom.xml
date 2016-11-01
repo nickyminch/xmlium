@@ -70,7 +70,7 @@
 							<packageName>org.xmlium.testsuite</packageName>
 						</configuration>
 					</plugin>
-					<plugin>
+					<!-- plugin>
 						<groupId>com.coderplus.maven.plugins</groupId>
 						<artifactId>copy-rename-maven-plugin</artifactId>
 						<version>1.0.1</version>
@@ -87,7 +87,7 @@
 								</configuration>
 							</execution>
 						</executions>
-					</plugin>
+					</plugin -->
 					<plugin>
 						<groupId>com.mycila</groupId>
     					<artifactId>license-maven-plugin</artifactId>

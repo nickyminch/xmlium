@@ -1,9 +1,0 @@
-2016-10-09 17:29:35 DEBUG XMLTestCase:902 - theClassWithMethod: java.lang.Math.random
-2016-10-09 17:29:35 DEBUG XMLTestCase:903 - theClass: java.lang.Math
-2016-10-09 17:29:35 DEBUG XMLTestCase:904 - theMethod: random
-2016-10-09 17:29:35 INFO  TestTests:53 - 752
-2016-10-09 17:29:35 DEBUG TestTests:67 - index:${first}
-2016-10-09 17:29:35 DEBUG TestTests:68 - first
-2016-10-09 17:29:35 DEBUG XMLTestCase:743 - index:${first}
-2016-10-09 17:29:35 DEBUG XMLTestCase:747 - index:\$\{first\}
-2016-10-09 17:29:35 DEBUG XMLTestCase:749 - xpath=//div[contains(@id, 'portfoliodetail-form:etfDataTable:0')]/descendant::span[contains(@class,'ui-chkbox-icon ui-icon ui-icon-blank ui-c')]
