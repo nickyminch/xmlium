@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tns:test xmlns:tns="http://www.xmlium.org/TestCase"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.xmlium.org/TestCase src/main/xsd/TestCase.xsd">
+
+	<tns:repeat>
+		<tns:repeatCount>-1</tns:repeatCount>
+		<tns:repeatSteps>
+			<tns:steps>
+				<tns:step>
+					<tns:scrollX>0</tns:scrollX>
+					<tns:scrollY>0</tns:scrollY>
+					<tns:element>
+						<tns:finds>
+							<tns:waitFor>
+								<tns:byXPath>
+									<tns:value>//a[@id='portfolio-name-form:deletePortfolio']
+									</tns:value>
+								</tns:byXPath>
+							</tns:waitFor>
+						</tns:finds>
+					</tns:element>
+				</tns:step>
+
+				<tns:step>
+					<tns:scrollX>0</tns:scrollX>
+					<tns:scrollY>0</tns:scrollY>
+					<tns:element>
+						<tns:finds>
+							<tns:waitFor>
+								<tns:byXPath>
+									<tns:value>//a[@id='portfolio-name-form:deletePortfolio']
+									</tns:value>
+								</tns:byXPath>
+							</tns:waitFor>
+						</tns:finds>
+						<tns:click />
+					</tns:element>
+				</tns:step>
+
+				<tns:step>
+					<tns:element>
+						<tns:finds>
+							<tns:waitFor>
+								<tns:byXPath>
+									<tns:value>//button[@id='confirmDeletePortfolioDialogForm:noButton']
+									</tns:value>
+								</tns:byXPath>
+							</tns:waitFor>
+						</tns:finds>
+						<tns:click />
+					</tns:element>
+				</tns:step>
+
+				<tns:step>
+					<tns:element>
+						<tns:finds>
+							<tns:waitFor>
+								<tns:byXPath>
+									<tns:value>//div[@id='confirmDeletePortfolioDialog' and
+										contains(@style,'display: none;')]
+									</tns:value>
+								</tns:byXPath>
+							</tns:waitFor>
+						</tns:finds>
+					</tns:element>
+				</tns:step>
+
+				<tns:step>
+					<tns:scrollX>0</tns:scrollX>
+					<tns:scrollY>0</tns:scrollY>
+					<tns:element>
+						<tns:finds>
+							<tns:waitFor>
+								<tns:byXPath>
+									<tns:value>//a[@id='portfolio-name-form:deletePortfolio']
+									</tns:value>
+								</tns:byXPath>
+							</tns:waitFor>
+						</tns:finds>
+						<tns:click />
+					</tns:element>
+				</tns:step>
+
+				<tns:step>
+					<tns:element>
+						<tns:finds>
+							<tns:waitFor>
+								<tns:byXPath>
+									<tns:value>//button[@id='confirmDeletePortfolioDialogForm:yesButton']
+									</tns:value>
+								</tns:byXPath>
+							</tns:waitFor>
+						</tns:finds>
+						<tns:click />
+					</tns:element>
+				</tns:step>
+
+				<tns:step>
+					<tns:element>
+						<tns:finds>
+							<tns:waitFor>
+								<tns:byXPath>
+									<tns:value>//div[@id='confirmDeletePortfolioDialog' and
+										contains(@style,'display: none;')]
+									</tns:value>
+								</tns:byXPath>
+							</tns:waitFor>
+						</tns:finds>
+					</tns:element>
+				</tns:step>
+			</tns:steps>
+		</tns:repeatSteps>
+	</tns:repeat>
+</tns:test>

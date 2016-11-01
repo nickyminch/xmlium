@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE test [
+<!ENTITY user  "someuser">
+<!ENTITY password  "somepassword">
+]>
+<tns:test xmlns:tns="http://www.xmlium.org/TestCase"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.xmlium.org/TestCase src/main/xsd/TestCase.xsd">
+	<tns:testSteps>
+		<tns:steps>
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//span[.='Zur Anmeldung']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:find>
+							<tns:byXPath>
+								<tns:value>//input[@id='login:login-email-text']</tns:value>
+							</tns:byXPath>
+						</tns:find>
+					</tns:finds>
+					<tns:sendKeys>
+						<tns:value>&user;</tns:value>
+					</tns:sendKeys>
+				</tns:element>
+			</tns:step>
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:find>
+							<tns:byXPath>
+								<tns:value>//input[@id='login:login-password-text']</tns:value>
+							</tns:byXPath>
+						</tns:find>
+					</tns:finds>
+					<tns:sendKeys>
+						<tns:value>&password;</tns:value>
+					</tns:sendKeys>
+				</tns:element>
+			</tns:step>
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:find>
+							<tns:byXPath>
+								<tns:value>//span[.='Anmelden']</tns:value>
+							</tns:byXPath>
+						</tns:find>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+		</tns:steps>
+	</tns:testSteps>
+</tns:test>
