@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:test xmlns:tns="http://www.xmlium.org/TestCase"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.xmlium.org/TestCase src/main/xsd/TestCase.xsd">
+	<tns:testSteps>
+		<tns:steps>
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//a[@id='portfolio-form:ChartDT:0:portfolioPositionDetail']
+								</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//a[@id='portfolio-form:ChartDT:0:portfolioPositionDetail']
+								</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element checkNullElement="true">
+					<tns:finds>
+						<tns:waitFor catchException="true">
+							<tns:byXPath>
+								<tns:indexedValue>//div[contains(@id,
+									'portfoliodetail-form:etfDataTable:index:${first}')]/descendant::span[contains(@class,'ui-chkbox-icon
+									ui-icon ui-icon-blank ui-c')]
+								</tns:indexedValue>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element checkNullElement="true">
+					<tns:finds>
+						<tns:waitFor catchException="true">
+							<tns:byXPath>
+								<tns:indexedValue>//div[contains(@id,
+									'portfoliodetail-form:etfDataTable:index:${next}')]/descendant::span[contains(@class,'ui-chkbox-icon
+									ui-icon ui-icon-blank ui-c')]
+								</tns:indexedValue>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element checkNullElement="true">
+					<tns:finds>
+						<tns:waitFor catchException="true">
+							<tns:byXPath>
+								<tns:indexedValue>//div[contains(@id,
+									'portfoliodetail-form:etfDataTable:index:${next}')]/descendant::span[contains(@class,'ui-chkbox-icon
+									ui-icon ui-icon-blank ui-c')]
+								</tns:indexedValue>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//span[.='Speichern']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//span[.='Speichern']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[contains(@class,'infoMessage')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[contains(@class,'infoMessage') and
+									contains(text(), 'Die Portfolio-Position wurde erfolgreich
+									gespeichert.')]
+								</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//span[.='Zurück']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+		</tns:steps>
+	</tns:testSteps>
+</tns:test>

@@ -1,0 +1,2407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:test xmlns:tns="http://www.xmlium.org/TestCase"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.xmlium.org/TestCase src/main/xsd/TestCase.xsd">
+	<tns:testSteps>
+		<tns:steps>
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//span[.='Neues Portfolio']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//span[.='Neues Portfolio']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:find>
+							<tns:byXPath>
+								<tns:value>//input[@id='portfolio-form:portfolioName']</tns:value>
+							</tns:byXPath>
+						</tns:find>
+					</tns:finds>
+					<tns:sendKeys>
+						<tns:value>Test KOM-86 from Selenium Tests</tns:value>
+					</tns:sendKeys>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:find>
+							<tns:byXPath>
+								<tns:value>//input[@id='portfolio-form:currency-amount']</tns:value>
+							</tns:byXPath>
+						</tns:find>
+					</tns:finds>
+					<tns:sendKeys>
+						<tns:value>4300</tns:value>
+					</tns:sendKeys>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:sleepAfter>500</tns:sleepAfter>
+				<tns:element>
+					<tns:finds>
+						<tns:find>
+							<tns:byXPath>
+								<tns:value>//div[@id='portfolio-form:slider']/descendant::span[contains(@class,'ui-slider-handle
+									ui-state-default ui-corner-all')]</tns:value>
+							</tns:byXPath>
+						</tns:find>
+					</tns:finds>
+					<tns:moveX>5</tns:moveX>
+					<tns:element>
+						<tns:finds>
+							<tns:find>
+								<tns:byXPath>
+									<tns:value>//div[@id='portfolio-form:slider']</tns:value>
+								</tns:byXPath>
+							</tns:find>
+						</tns:finds>
+					</tns:element>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:find>
+							<tns:byXPath>
+								<tns:value>//span[.='Speichern']</tns:value>
+							</tns:byXPath>
+						</tns:find>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[contains(@class,'infoMessage')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[contains(@class,'infoMessage') and
+									contains(text(), 'Ihr Portfolio wurde erfolgreich
+									gespeichert')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='portfolio-form:back']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//a[@id='portfolio-form:ChartDT:1:portfolioPositionDetail']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//a[@id='portfolio-form:ChartDT:1:portfolioPositionDetail']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='portfoliodetail-form:createOtherInvestmentBtn']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='portfoliodetail-form:createOtherInvestmentBtn']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//input[@id='otherInvestment-form:otherInvestmentName']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:sendKeys>
+						<tns:value>Other Investment 1</tns:value>
+					</tns:sendKeys>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//input[@id='otherInvestment-form:otherInvestment-amount']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:sendKeys>
+						<tns:value>123,78</tns:value>
+					</tns:sendKeys>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='otherInvestment-form:saveButton']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[contains(@class,'infoMessage') and
+									contains(text(), 'Sonstige Anlage gespeichert')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='portfoliodetail-form:back']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='portfoliodetail-form:back']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='portfolio-form:changePortfolio']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='portfolio-form:changePortfolio']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//div[@id='portfolio-form:portfolioPositionsTable:1:rowEdit']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byCssSelector>
+								<tns:value>div#portfolio-form\:portfolioPositionsTable\:1\:rowEdit
+									span:not([style*="display"]).ui-icon.ui-icon-pencil</tns:value>
+							</tns:byCssSelector>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//input[@id='portfolio-form:portfolioPositionsTable:1:portfolioPositionName']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:sendKeys>
+						<tns:removeOld>true</tns:removeOld>
+						<tns:value>test 1</tns:value>
+						<tns:pressEnter>true</tns:pressEnter>
+					</tns:sendKeys>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byCssSelector>
+								<tns:value>div#portfolio-form\:portfolioPositionsTable\:1\:rowEdit
+									span:not([style*="display"]).ui-icon.ui-icon-pencil</tns:value>
+							</tns:byCssSelector>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byCssSelector>
+								<tns:value>div#portfolio-form\:portfolioPositionsTable\:1\:rowEdit
+									span:not([style*="display"]).ui-icon.ui-icon-pencil</tns:value>
+							</tns:byCssSelector>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:sleepAfter>500</tns:sleepAfter>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//input[@id='portfolio-form:portfolioPositionsTable:1:portfolioPositionPlannedWeight']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:storeValue>
+						<tns:key>test 1</tns:key>
+					</tns:storeValue>
+					<tns:setValue>
+						<tns:keys>
+							<tns:key>test 1</tns:key>
+						</tns:keys>
+						<tns:valueExpression>${0}+2</tns:valueExpression>
+					</tns:setValue>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byCssSelector>
+								<tns:value>div#portfolio-form\:portfolioPositionsTable\:2\:rowEdit
+									span:not([style*="display"]).ui-icon.ui-icon-pencil</tns:value>
+							</tns:byCssSelector>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byCssSelector>
+								<tns:value>div#portfolio-form\:portfolioPositionsTable\:2\:rowEdit
+									span:not([style*="display"]).ui-icon.ui-icon-pencil</tns:value>
+							</tns:byCssSelector>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:sleepAfter>500</tns:sleepAfter>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//input[@id='portfolio-form:portfolioPositionsTable:2:portfolioPositionPlannedWeight']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:storeValue>
+						<tns:key>test 2</tns:key>
+					</tns:storeValue>
+					<tns:setValue>
+						<tns:keys>
+							<tns:key>test 2</tns:key>
+						</tns:keys>
+						<tns:valueExpression>${0}-2</tns:valueExpression>
+					</tns:setValue>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//tfoot[@id='portfolio-form:portfolioPositionsTable_foot']/descendant::td[contains(@class,'ui-state-default
+									portfolioChangeTableFooterWeight') and contains(text(),
+									'100,00')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//span[.='Speichern']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//span[.='Speichern']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[contains(@class,'infoMessage')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[contains(@class,'infoMessage') and
+									contains(text(), 'Ihr Portfolio wurde erfolgreich
+									gespeichert')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:stepsFile>/de/worldportfolio/test/changePortfolioClick.xml</tns:stepsFile>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byCssSelector>
+								<tns:value>div#portfolio-form\:portfolioPositionsTable\:2\:rowEdit
+									span:not([style*="display"]).ui-icon.ui-icon-pencil</tns:value>
+							</tns:byCssSelector>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byCssSelector>
+								<tns:value>div#portfolio-form\:portfolioPositionsTable\:2\:rowEdit
+									span:not([style*="display"]).ui-icon.ui-icon-pencil</tns:value>
+							</tns:byCssSelector>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//input[@id='portfolio-form:portfolioPositionsTable:2:portfolioPositionName']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:sendKeys>
+						<tns:removeOld>true</tns:removeOld>
+						<tns:value>test 1</tns:value>
+						<tns:pressEnter>true</tns:pressEnter>
+					</tns:sendKeys>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//span[.='Speichern']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//span[.='Speichern']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[contains(@class,'errorMessage')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[contains(@class,'errorMessage') and
+									contains(text(), 'Der Name der Anlageklasse muss eindeutig
+									sein')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byCssSelector>
+								<tns:value>div#portfolio-form\:portfolioPositionsTable\:2\:rowEdit
+									span:not([style*="display"]).ui-icon.ui-icon-pencil</tns:value>
+							</tns:byCssSelector>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byCssSelector>
+								<tns:value>div#portfolio-form\:portfolioPositionsTable\:2\:rowEdit
+									span:not([style*="display"]).ui-icon.ui-icon-pencil</tns:value>
+							</tns:byCssSelector>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//input[@id='portfolio-form:portfolioPositionsTable:2:portfolioPositionPlannedWeight']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:storeValue>
+						<tns:key>test 2</tns:key>
+					</tns:storeValue>
+					<tns:setValue>
+						<tns:keys>
+							<tns:key>test 2</tns:key>
+						</tns:keys>
+						<tns:valueExpression>${0}-2</tns:valueExpression>
+					</tns:setValue>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//span[.='Speichern']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//span[.='Speichern']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[contains(@class,'errorMessage')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[contains(@class,'errorMessage') and
+									contains(text(), 'Der Name der Anlageklasse muss eindeutig
+									sein')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[contains(@class,'errorMessage') and
+									contains(text(), 'Die Summe des Plangewichts muss 100%
+									ergeben')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byCssSelector>
+								<tns:value>div#portfolio-form\:portfolioPositionsTable\:2\:rowEdit
+									span:not([style*="display"]).ui-icon.ui-icon-pencil</tns:value>
+							</tns:byCssSelector>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byCssSelector>
+								<tns:value>div#portfolio-form\:portfolioPositionsTable\:2\:rowEdit
+									span:not([style*="display"]).ui-icon.ui-icon-pencil</tns:value>
+							</tns:byCssSelector>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//input[@id='portfolio-form:portfolioPositionsTable:2:portfolioPositionName']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:sendKeys>
+						<tns:removeOld>true</tns:removeOld>
+						<tns:value>test 2</tns:value>
+					</tns:sendKeys>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//input[@id='portfolio-form:portfolioPositionsTable:2:portfolioPositionPlannedWeight']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:storeValue>
+						<tns:key>test 2</tns:key>
+					</tns:storeValue>
+					<tns:setValue>
+						<tns:keys>
+							<tns:key>test 2</tns:key>
+						</tns:keys>
+						<tns:valueExpression>${0}+2</tns:valueExpression>
+					</tns:setValue>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//span[.='Speichern']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//span[.='Speichern']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[contains(@class,'infoMessage')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[contains(@class,'infoMessage') and
+									contains(text(), 'Ihr Portfolio wurde erfolgreich
+									gespeichert')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+
+			<tns:stepsFile>/de/worldportfolio/test/changePortfolioClick.xml</tns:stepsFile>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//span[@id='portfolio-form:portfolioPositionsTable:4:portfolioPositionPlannedWeightOutput']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//span[@id='portfolio-form:portfolioPositionsTable:4:portfolioPositionPlannedWeightOutput']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:storeValue>
+						<tns:key>test 1</tns:key>
+					</tns:storeValue>
+				</tns:element>
+			</tns:step>
+
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//a[@id='portfolio-form:portfolioPositionsTable:4:deletePortfolioPosition']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='confirmDeletePortfolioPositionDialogForm:yesButtonPortfolioPosition']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//div[@id='confirmDeletPortfolioPositionDialog' and
+									contains(@style,'display: none;')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//div[@id='portfolio-form:portfolioPositionsTable:3:rowEdit']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byCssSelector>
+								<tns:value>div#portfolio-form\:portfolioPositionsTable\:3\:rowEdit
+									span:not([style*="display"]).ui-icon.ui-icon-pencil</tns:value>
+							</tns:byCssSelector>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//input[@id='portfolio-form:portfolioPositionsTable:3:portfolioPositionPlannedWeight']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:storeValue>
+						<tns:key>test 2</tns:key>
+					</tns:storeValue>
+					<tns:setValue>
+						<tns:keys>
+							<tns:key>test 1</tns:key>
+							<tns:key>test 2</tns:key>
+						</tns:keys>
+						<tns:valueExpression>${0}+${1}</tns:valueExpression>
+					</tns:setValue>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//tfoot[@id='portfolio-form:portfolioPositionsTable_foot']/descendant::td[contains(@class,'ui-state-default
+									portfolioChangeTableFooterWeight') and contains(text(),
+									'100,00')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//span[.='Speichern']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//span[.='Speichern']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[contains(@class,'infoMessage')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[contains(@class,'infoMessage') and
+									contains(text(), 'Ihr Portfolio wurde erfolgreich
+									gespeichert')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:stepsFile>/de/worldportfolio/test/changePortfolioClick.xml</tns:stepsFile>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:find>
+							<tns:byXPath>
+								<tns:value>//input[@id='portfolio-form:currency-amount']</tns:value>
+							</tns:byXPath>
+						</tns:find>
+					</tns:finds>
+					<tns:sendKeys>
+						<tns:removeOld>true</tns:removeOld>
+						<tns:value>14300</tns:value>
+					</tns:sendKeys>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:find>
+							<tns:byXPath>
+								<tns:value>//span[.='Speichern']</tns:value>
+							</tns:byXPath>
+						</tns:find>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[contains(@class,'infoMessage')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[contains(@class,'infoMessage') and
+									contains(text(), 'Ihr Portfolio wurde erfolgreich
+									gespeichert')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:stepsFile>/de/worldportfolio/test/changePortfolioClick.xml</tns:stepsFile>
+
+			<tns:step>
+				<tns:sleepAfter>500</tns:sleepAfter>
+				<tns:element>
+					<tns:finds>
+						<tns:find>
+							<tns:byXPath>
+								<tns:value>//div[@id='portfolio-form:slider']/descendant::span[contains(@class,'ui-slider-handle
+									ui-state-default ui-corner-all')]</tns:value>
+							</tns:byXPath>
+						</tns:find>
+					</tns:finds>
+					<tns:moveX>-1</tns:moveX>
+					<tns:element>
+						<tns:finds>
+							<tns:find>
+								<tns:byXPath>
+									<tns:value>//div[@id='portfolio-form:slider']</tns:value>
+								</tns:byXPath>
+							</tns:find>
+						</tns:finds>
+					</tns:element>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='portfolio-form:saveButton']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='portfolio-form:saveButton']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='confirmUpdateDialogForm:noButton']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//div[@id='changePortfolioConfirmUpdateDialog' and
+									contains(@style,'display: none;')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:find>
+							<tns:byXPath>
+								<tns:value>//div[@id='portfolio-form:slider']</tns:value>
+							</tns:byXPath>
+						</tns:find>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:sleepAfter>500</tns:sleepAfter>
+				<tns:element>
+					<tns:finds>
+						<tns:find>
+							<tns:byXPath>
+								<tns:value>//div[@id='portfolio-form:slider']/descendant::span[contains(@class,'ui-slider-handle
+									ui-state-default ui-corner-all')]</tns:value>
+							</tns:byXPath>
+						</tns:find>
+					</tns:finds>
+					<tns:moveX>-1</tns:moveX>
+					<tns:element>
+						<tns:finds>
+							<tns:find>
+								<tns:byXPath>
+									<tns:value>//div[@id='portfolio-form:slider']</tns:value>
+								</tns:byXPath>
+							</tns:find>
+						</tns:finds>
+					</tns:element>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='portfolio-form:saveButton']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='portfolio-form:saveButton']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='confirmUpdateDialogForm:yesButton']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[contains(@class,'infoMessage')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[contains(@class,'infoMessage') and
+									contains(text(), 'Ihr Portfolio wurde erfolgreich
+									gespeichert')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:stepsFile>/de/worldportfolio/test/changePortfolioClick.xml</tns:stepsFile>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//div[@id='portfolio-form:portfolioPositionsTable:1:rowEdit']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byCssSelector>
+								<tns:value>div#portfolio-form\:portfolioPositionsTable\:1\:rowEdit
+									span:not([style*="display"]).ui-icon.ui-icon-pencil</tns:value>
+							</tns:byCssSelector>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//input[@id='portfolio-form:portfolioPositionsTable:1:portfolioPositionName']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:sendKeys>
+						<tns:removeOld>true</tns:removeOld>
+						<tns:value></tns:value>
+						<tns:pressEnter>true</tns:pressEnter>
+					</tns:sendKeys>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//div[@id='portfolio-form:portfolioPositionsTable:3:rowEdit']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byCssSelector>
+								<tns:value>div#portfolio-form\:portfolioPositionsTable\:3\:rowEdit
+									span:not([style*="display"]).ui-icon.ui-icon-pencil</tns:value>
+							</tns:byCssSelector>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//input[@id='portfolio-form:portfolioPositionsTable:3:portfolioPositionName']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:sendKeys>
+						<tns:removeOld>true</tns:removeOld>
+						<tns:value></tns:value>
+						<tns:pressEnter>true</tns:pressEnter>
+					</tns:sendKeys>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:find>
+							<tns:byXPath>
+								<tns:value>//span[.='Speichern']</tns:value>
+							</tns:byXPath>
+						</tns:find>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[contains(@class,'infoMessage')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[contains(@class,'infoMessage') and
+									contains(text(), 'Ihr Portfolio wurde erfolgreich
+									gespeichert')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='portfolio-form:back']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='portfolio-form:back']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//a[@id='portfolio-form:ChartDT:1:portfolioPositionDetail']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//a[@id='portfolio-form:ChartDT:1:portfolioPositionDetail']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='portfoliodetail-form:createOtherInvestmentBtn']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='portfoliodetail-form:createOtherInvestmentBtn']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//input[@id='otherInvestment-form:otherInvestmentName']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:sendKeys>
+						<tns:value>Other Investment 3</tns:value>
+					</tns:sendKeys>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//input[@id='otherInvestment-form:otherInvestment-amount']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:sendKeys>
+						<tns:value>123,78</tns:value>
+					</tns:sendKeys>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='otherInvestment-form:saveButton']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[contains(@class,'infoMessage') and
+									contains(text(), 'Sonstige Anlage gespeichert')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='portfoliodetail-form:back']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='portfoliodetail-form:back']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='portfolio-form:changePortfolio']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='portfolio-form:changePortfolio']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//div[@id='portfolio-form:portfolioPositionsTable:1:rowEdit']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byCssSelector>
+								<tns:value>div#portfolio-form\:portfolioPositionsTable\:1\:rowEdit
+									span:not([style*="display"]).ui-icon.ui-icon-pencil</tns:value>
+							</tns:byCssSelector>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//input[@id='portfolio-form:portfolioPositionsTable:1:portfolioPositionName']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:sendKeys>
+						<tns:removeOld>true</tns:removeOld>
+						<tns:value>test 1</tns:value>
+						<tns:pressEnter>true</tns:pressEnter>
+					</tns:sendKeys>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byCssSelector>
+								<tns:value>div#portfolio-form\:portfolioPositionsTable\:1\:rowEdit
+									span:not([style*="display"]).ui-icon.ui-icon-pencil</tns:value>
+							</tns:byCssSelector>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byCssSelector>
+								<tns:value>div#portfolio-form\:portfolioPositionsTable\:1\:rowEdit
+									span:not([style*="display"]).ui-icon.ui-icon-pencil</tns:value>
+							</tns:byCssSelector>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//input[@id='portfolio-form:portfolioPositionsTable:1:portfolioPositionPlannedWeight']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:storeValue>
+						<tns:key>test 1</tns:key>
+					</tns:storeValue>
+					<tns:setValue>
+						<tns:keys>
+							<tns:key>test 1</tns:key>
+						</tns:keys>
+						<tns:valueExpression>${0}+2</tns:valueExpression>
+					</tns:setValue>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byCssSelector>
+								<tns:value>div#portfolio-form\:portfolioPositionsTable\:2\:rowEdit
+									span:not([style*="display"]).ui-icon.ui-icon-pencil</tns:value>
+							</tns:byCssSelector>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byCssSelector>
+								<tns:value>div#portfolio-form\:portfolioPositionsTable\:2\:rowEdit
+									span:not([style*="display"]).ui-icon.ui-icon-pencil</tns:value>
+							</tns:byCssSelector>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//input[@id='portfolio-form:portfolioPositionsTable:2:portfolioPositionPlannedWeight']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:storeValue>
+						<tns:key>test 2</tns:key>
+					</tns:storeValue>
+					<tns:setValue>
+						<tns:keys>
+							<tns:key>test 2</tns:key>
+						</tns:keys>
+						<tns:valueExpression>${0}-2</tns:valueExpression>
+					</tns:setValue>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//tfoot[@id='portfolio-form:portfolioPositionsTable_foot']/descendant::td[contains(@class,'ui-state-default
+									portfolioChangeTableFooterWeight') and contains(text(),
+									'100,00')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//span[.='Speichern']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//span[.='Speichern']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[contains(@class,'infoMessage')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[contains(@class,'infoMessage') and
+									contains(text(), 'Ihr Portfolio wurde erfolgreich
+									gespeichert')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+
+			<tns:stepsFile>/de/worldportfolio/test/changePortfolioClick.xml</tns:stepsFile>
+
+			<tns:step>
+				<tns:sleepAfter>170</tns:sleepAfter>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='portfolio-form:portfolioPositionsTable:addAssetClass']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//input[@id='portfolio-form:portfolioPositionsTable:8:portfolioPositionName']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:sendKeys>
+						<tns:removeOld>true</tns:removeOld>
+						<tns:value>test 4</tns:value>
+						<tns:pressEnter>true</tns:pressEnter>
+					</tns:sendKeys>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:find>
+							<tns:byXPath>
+								<tns:value>//span[.='Speichern']</tns:value>
+							</tns:byXPath>
+						</tns:find>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[contains(@class,'infoMessage')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[contains(@class,'infoMessage') and
+									contains(text(), 'Ihr Portfolio wurde erfolgreich
+									gespeichert')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:stepsFile>/de/worldportfolio/test/changePortfolioClick.xml</tns:stepsFile>
+
+			<tns:step>
+				<tns:sleepAfter>170</tns:sleepAfter>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='portfolio-form:portfolioPositionsTable:addAssetClass']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:sleepAfter>170</tns:sleepAfter>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='portfolio-form:portfolioPositionsTable:addAssetClass']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:sleepAfter>170</tns:sleepAfter>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='portfolio-form:portfolioPositionsTable:addAssetClass']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:sleepAfter>170</tns:sleepAfter>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='portfolio-form:portfolioPositionsTable:addAssetClass']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//input[@id='portfolio-form:portfolioPositionsTable:10:portfolioPositionName']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:sendKeys>
+						<tns:removeOld>true</tns:removeOld>
+						<tns:value>test 2</tns:value>
+						<tns:pressEnter>true</tns:pressEnter>
+					</tns:sendKeys>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:find>
+							<tns:byXPath>
+								<tns:value>//span[.='Speichern']</tns:value>
+							</tns:byXPath>
+						</tns:find>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[contains(@class,'errorMessage')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[contains(@class,'errorMessage') and
+									contains(text(), 'Bitte vergen Sie einen Namen für alle
+									Anlageklassen')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//a[@id='portfolio-form:portfolioPositionsTable:9:deletePortfolioPosition']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='confirmDeletePortfolioPositionDialogForm:yesButtonPortfolioPosition']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//div[@id='confirmDeletPortfolioPositionDialog' and
+									contains(@style,'display: none;')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:find>
+							<tns:byXPath>
+								<tns:value>//span[.='Speichern']</tns:value>
+							</tns:byXPath>
+						</tns:find>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[contains(@class,'infoMessage')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[contains(@class,'infoMessage') and
+									contains(text(), 'Ihr Portfolio wurde erfolgreich
+									gespeichert')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[@id='menu-item-form:rm_savings_plan']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//input[@id='savings-plan-form:savings-amount']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:sendKeys>
+						<tns:removeOld>true</tns:removeOld>
+						<tns:value>150,234</tns:value>
+					</tns:sendKeys>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:sleepAfter>100</tns:sleepAfter>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//input[@id='savings-plan-form:savings-date_input']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:sendKeys>
+						<tns:removeOld>true</tns:removeOld>
+						<tns:value>10.10.16</tns:value>
+					</tns:sendKeys>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:sleepAfter>100</tns:sleepAfter>
+				<tns:element>
+					<tns:finds>
+						<tns:find>
+							<tns:byXPath>
+								<tns:value>//span[.='Speichern']</tns:value>
+							</tns:byXPath>
+						</tns:find>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//span[@id='savings-plan-form:savings-date-message' and contains(@class, 'errorMessage')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+			
+			<tns:step>
+				<tns:sleepAfter>100</tns:sleepAfter>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//input[@id='savings-plan-form:savings-date_input']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:sendKeys>
+						<tns:removeOld>true</tns:removeOld>
+						<tns:value>25.10.17</tns:value>
+					</tns:sendKeys>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='savings-plan-form:savingsPlanPositionsTable:addSavingsPlanPosition']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:sleepAfter>300</tns:sleepAfter>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='savings-plan-form:savingsPlanPositionsTable:addSavingsPlanPosition']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='savings-plan-form:savingsPlanPositionsTable:addSavingsPlanPosition']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:sleepAfter>300</tns:sleepAfter>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='savings-plan-form:savingsPlanPositionsTable:addSavingsPlanPosition']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:sleepAfter>300</tns:sleepAfter>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//div[@id='savings-plan-form:savingsPlanPositionsTable:0:rowEdit']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:sleepAfter>300</tns:sleepAfter>
+				<tns:prettySelect>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//select[@id='savings-plan-form:savingsPlanPositionsTable:0:savingsPlanPositionAssetClass_input']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:selectBy>
+						<tns:byVisibleText>VII:Aktien Small Caps - Blend - Nordamerika</tns:byVisibleText>
+						<tns:arrowArea>
+							<tns:waitFor>
+								<tns:byXPath>
+									<tns:value>//div[@id='savings-plan-form:savingsPlanPositionsTable:0:savingsPlanPositionAssetClass']/descendant::span[contains(@class,'ui-icon
+										ui-icon-triangle-1-s ui-c')]</tns:value>
+								</tns:byXPath>
+							</tns:waitFor>
+						</tns:arrowArea>
+						<tns:scrollArea>
+							<tns:find>
+								<tns:byXPath>
+									<tns:value>//ul[@id='savings-plan-form:savingsPlanPositionsTable:0:savingsPlanPositionAssetClass_items']</tns:value>
+								</tns:byXPath>
+							</tns:find>
+						</tns:scrollArea>
+						<tns:optionsTag>li</tns:optionsTag>
+						<tns:optionsClasses>ui-selectonemenu-item
+							ui-selectonemenu-list-item ui-corner-all</tns:optionsClasses>
+					</tns:selectBy>
+				</tns:prettySelect>
+			</tns:step>
+
+
+			<tns:step>
+				<tns:sleepAfter>500</tns:sleepAfter>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//input[@id='savings-plan-form:savingsPlanPositionsTable:0:savingsPlanPositionWeight']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:sendKeys>
+						<tns:removeOld>true</tns:removeOld>
+						<tns:value>50</tns:value>
+						<tns:pressEnter>true</tns:pressEnter>
+					</tns:sendKeys>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:sleepAfter>500</tns:sleepAfter>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//div[@id='savings-plan-form:savingsPlanPositionsTable:1:rowEdit']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:sleepAfter>500</tns:sleepAfter>
+				<tns:prettySelect>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//select[@id='savings-plan-form:savingsPlanPositionsTable:1:savingsPlanPositionAssetClass_input']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:selectBy>
+						<tns:byVisibleText>IX:Aktien Large Caps + Mid Caps - Value -
+							Westeuropa</tns:byVisibleText>
+						<tns:arrowArea>
+							<tns:waitFor>
+								<tns:byXPath>
+									<tns:value>//div[@id='savings-plan-form:savingsPlanPositionsTable:1:savingsPlanPositionAssetClass']/descendant::span[contains(@class,'ui-icon
+										ui-icon-triangle-1-s ui-c')]</tns:value>
+								</tns:byXPath>
+							</tns:waitFor>
+						</tns:arrowArea>
+						<tns:scrollArea>
+							<tns:find>
+								<tns:byXPath>
+									<tns:value>//ul[@id='savings-plan-form:savingsPlanPositionsTable:1:savingsPlanPositionAssetClass_items']</tns:value>
+								</tns:byXPath>
+							</tns:find>
+						</tns:scrollArea>
+						<tns:optionsTag>li</tns:optionsTag>
+						<tns:optionsClasses>ui-selectonemenu-item
+							ui-selectonemenu-list-item ui-corner-all</tns:optionsClasses>
+					</tns:selectBy>
+				</tns:prettySelect>
+			</tns:step>
+
+
+			<tns:step>
+				<tns:sleepAfter>500</tns:sleepAfter>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//input[@id='savings-plan-form:savingsPlanPositionsTable:1:savingsPlanPositionWeight']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:sendKeys>
+						<tns:removeOld>true</tns:removeOld>
+						<tns:value>50</tns:value>
+						<tns:pressEnter>true</tns:pressEnter>
+					</tns:sendKeys>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:find>
+							<tns:byXPath>
+								<tns:value>//span[.='Speichern']</tns:value>
+							</tns:byXPath>
+						</tns:find>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[contains(@class,'infoMessage')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[contains(@class,'infoMessage') and
+									contains(text(), 'Sparplan wurde erfolgreich gespeichert')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//li[@id='menu-item-form:rm_overview']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:scrollX>0</tns:scrollX>
+				<tns:scrollY>0</tns:scrollY>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//a[@id='portfolio-name-form:deletePortfolio']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:scrollX>0</tns:scrollX>
+				<tns:scrollY>0</tns:scrollY>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//a[@id='portfolio-name-form:deletePortfolio']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='confirmDeletePortfolioDialogForm:yesButton']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//div[@id='confirmDeletePortfolioDialog' and
+									contains(@style,'display: none;')]</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+		</tns:steps>
+	</tns:testSteps>
+</tns:test>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:testSteps xmlns:tns="http://www.xmlium.org/TestSteps"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.xmlium.org/TestSteps /src/main/xsd/TestSteps.xsd ">
+	<testSteps>
+		<tns:steps>
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='portfolio-form:back']</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='portfolio-form:changePortfolio']
+								</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+				</tns:element>
+			</tns:step>
+
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+						<tns:waitFor>
+							<tns:byXPath>
+								<tns:value>//button[@id='portfolio-form:changePortfolio']
+								</tns:value>
+							</tns:byXPath>
+						</tns:waitFor>
+					</tns:finds>
+					<tns:click />
+				</tns:element>
+			</tns:step>
+		</tns:steps>
+	</testSteps>
+</tns:testSteps>

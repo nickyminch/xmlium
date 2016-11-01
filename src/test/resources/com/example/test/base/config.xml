@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE testConfig [
+<!ENTITY resourcesPathString  "../someproject/src/main/resources/de/worldportfolio">
+<!ENTITY url  "http://localhost:8181/">
+]>
+<tns:testConfig xmlns:tns="http://www.xmlium.org/TestConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xmlium.org/TestConfig /src/main/xsd/TestConfig.xsd ">
+     <tns:pathString>&resourcesPathString;</tns:pathString>
+     <!-- tns:driverClass>org.openqa.selenium.ie.InternetExplorerDriver</tns:driverClass -->
+     <!-- tns:driverClass>org.openqa.selenium.firefox.FirefoxDriver</tns:driverClass -->
+     <tns:driverClass>org.openqa.selenium.chrome.ChromeDriver</tns:driverClass>
+     <tns:timeout>4</tns:timeout>
+     <tns:timeUnit>SECONDS</tns:timeUnit>
+     <tns:url>&url;</tns:url>
+     <tns:locale>de_DE</tns:locale>
+     <tns:fluentWaitIgnore>
+       <tns:exceptionClassNames>
+       	org.openqa.selenium.NoSuchElementException
+       	org.openqa.selenium.StaleElementReferenceException
+       </tns:exceptionClassNames>
+     </tns:fluentWaitIgnore>
+     <tns:delay>150</tns:delay>
+     <!-- tns:delay>250</tns:delay -->
+</tns:testConfig>
