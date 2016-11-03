@@ -95,14 +95,17 @@ public class XMLTestCase {
 			Repeat repeat = test.getRepeat();
 			XMLTestSteps xmlTestSteps = new XMLTestSteps(getSuite(), repeat.getRepeatSteps());
 			int repeatCount = repeat.getRepeatCount().intValue();
-			if (repeatCount == -1) {
-				repeatCount = Integer.MAX_VALUE;
+			int infiniteCount = 1000;
+			if (repeatCount != -1) {
+				infiniteCount = repeatCount;
+			}else{
+				repeatCount = infiniteCount;
 			}
-			for (int i = 0; i < repeatCount; i++) {
+			for (int i = 0; i < repeatCount && i<infiniteCount; i++) {
 				try {
 					xmlTestSteps.processSteps();
 				} catch (Exception e) {
-					if (repeatCount == Integer.MAX_VALUE) {
+					if (infiniteCount == 1000) {
 						if (e instanceof org.openqa.selenium.NoSuchElementException) {
 							NoSuchElementException nse = (NoSuchElementException) e;
 							logger.debug("message: " + nse.getMessage());
@@ -128,6 +131,7 @@ public class XMLTestCase {
 								List<String> values = xmlTestSteps.getAvailableValuesForSteps();
 								for (String value : values) {
 									logger.debug("value: " + value);
+									logger.debug("message: "+nse.getMessage());
 									if (nse.getMessage().contains(value)) {
 										throwException = false;
 										break;
@@ -144,8 +148,8 @@ public class XMLTestCase {
 						throw e;
 					}
 
-					logger.error(e.getMessage(), e);
-					e.printStackTrace();
+//					logger.error(e.getMessage(), e);
+//					e.printStackTrace();
 					break;
 				}
 			}

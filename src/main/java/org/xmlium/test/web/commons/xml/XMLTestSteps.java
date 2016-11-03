@@ -1171,7 +1171,7 @@ public class XMLTestSteps {
 				try {
 					element.clear();
 
-					actions.sendKeys(element, getSuite().getCurrencyFormat().format(value)).sendKeys(element, Keys.ENTER).build()
+					actions.sendKeys(element, Keys.chord(Keys.SHIFT, Keys.HOME, Keys.END, Keys.NULL, getSuite().getCurrencyFormat().format(value))).sendKeys(element, Keys.ENTER).build()
 							.perform();
 				} catch (Exception e1) {
 					logger.error(e, e1);
