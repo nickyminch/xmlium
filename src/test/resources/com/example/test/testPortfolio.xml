@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<tns:testSuite xmlns:tns="http://www.xmlium.org/TestSuite" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xmlium.org/TestSuite /src/main/xsd/TestSuite.xsd ">
+<tns:testSuite xmlns:tns="http://www.xmlium.org/TestSuite" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xmlium.org/TestSuite http://www.xmlium.org/TestSuite.xsd ">
   <tns:testCase>
   	<tns:configFile>/de/worldportfolio/test/base/config.xml</tns:configFile>
    	<tns:get></tns:get>

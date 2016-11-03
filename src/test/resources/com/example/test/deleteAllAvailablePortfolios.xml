@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<tns:test xmlns:tns="http://www.xmlium.org/TestCase"
+<t:test xmlns:t="http://www.xmlium.org/TestCase"
+		xmlns:tns="http://www.xmlium.org/TestSteps"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.xmlium.org/TestCase src/main/xsd/TestCase.xsd">
+	xsi:schemaLocation="http://www.xmlium.org http://www.xmlium.org/TestCase.xsd">
 
-	<tns:repeat>
-		<tns:repeatCount>-1</tns:repeatCount>
-		<tns:repeatSteps>
+	<t:repeat>
+		<t:repeatCount>-1</t:repeatCount>
+		<t:repeatSteps>
 			<tns:steps>
 				<tns:step>
 					<tns:scrollX>0</tns:scrollX>
@@ -110,6 +111,6 @@
 					</tns:element>
 				</tns:step>
 			</tns:steps>
-		</tns:repeatSteps>
-	</tns:repeat>
-</tns:test>
+		</t:repeatSteps>
+	</t:repeat>
+</t:test>

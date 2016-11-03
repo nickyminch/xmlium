@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tns:test xmlns:tns="http://www.xmlium.org/TestCase"
+<t:test xmlns:t="http://www.xmlium.org/TestCase"
+		xmlns:tns="http://www.xmlium.org/TestSteps"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.xmlium.org/TestCase src/main/xsd/TestCase.xsd">
-	<tns:testSteps>
+	xsi:schemaLocation="http://www.xmlium.org http://www.xmlium.org/TestCase.xsd">
+	<t:testSteps>
 		<tns:steps>
 			<tns:step>
 				<tns:element>
@@ -1205,5 +1206,5 @@
 				</tns:element>
 			</tns:step>
 		</tns:steps>
-	</tns:testSteps>
-</tns:test>
+	</t:testSteps>
+</t:test>

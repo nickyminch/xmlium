@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE testConfig [
-<!ENTITY resourcesPathString  "../someproject/src/main/resources/de/worldportfolio">
-<!ENTITY url  "http://localhost:8181/">
+<!ENTITY resourcesPathString  "path/to/your/resources">
+<!ENTITY url  "http://localhost:8080/">
 ]>
 <tns:testConfig xmlns:tns="http://www.xmlium.org/TestConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xmlium.org/TestConfig /src/main/xsd/TestConfig.xsd ">
      <tns:pathString>&resourcesPathString;</tns:pathString>

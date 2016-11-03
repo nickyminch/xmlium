@@ -1,7 +1,9 @@
-<tns:test xmlns:tns="http://www.xmlium.org/TestSuite"
+<?xml version="1.0" encoding="UTF-8"?>
+<t:test xmlns:t="http://www.xmlium.org/TestCase"
+		xmlns:tns="http://www.xmlium.org/TestSteps"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.xmlium.org/TestSuite src/main/xsd/TestSuite.xsd">
-	<testSteps>
+	xsi:schemaLocation="http://www.xmlium.org http://www.xmlium.org/TestCase.xsd">
+	<t:testSteps>
 		<tns:step>
 			<tns:element>
 				<tns:finds>
@@ -354,5 +356,5 @@
 				</tns:selectBy>
 			</tns:prettySelect>
 		</tns:step>
-	</testSteps>
-</tns:test>
+	</t:testSteps>
+</t:test>

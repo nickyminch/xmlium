@@ -1237,9 +1237,6 @@ public class XMLTestSteps {
 			}
 		}
 	}
-	void test() throws Exception{
-		processSteps();
-	}
 
 	public XMLTestSuite getSuite() {
 		return suite;

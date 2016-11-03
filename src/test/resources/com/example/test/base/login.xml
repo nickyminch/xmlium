@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE test [
-<!ENTITY user  "someuser">
-<!ENTITY password  "somepassword">
+<!ENTITY user  "myTestUser">
+<!ENTITY password  "myTestPassword">
 ]>
-<tns:test xmlns:tns="http://www.xmlium.org/TestCase"
+<t:test xmlns:t="http://www.xmlium.org/TestCase"
+		xmlns:tns="http://www.xmlium.org/TestSteps"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.xmlium.org/TestCase src/main/xsd/TestCase.xsd">
-	<tns:testSteps>
+	xsi:schemaLocation="http://www.xmlium.org http://www.xmlium.org/TestCase.xsd">
+	<t:testSteps>
 		<tns:steps>
 			<tns:step>
 				<tns:element>
@@ -27,6 +28,7 @@
 							<tns:byXPath>
 								<tns:value>//input[@id='login:login-email-text']</tns:value>
 							</tns:byXPath>
+							<!-- tns:byId> <tns:value>login:login-email-text</tns:value> </tns:byId -->
 						</tns:find>
 					</tns:finds>
 					<tns:sendKeys>
@@ -61,5 +63,5 @@
 				</tns:element>
 			</tns:step>
 		</tns:steps>
-	</tns:testSteps>
-</tns:test>
+	</t:testSteps>
+</t:test>

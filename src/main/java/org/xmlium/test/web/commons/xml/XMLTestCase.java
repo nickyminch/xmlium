@@ -110,6 +110,7 @@ public class XMLTestCase {
 							List<String> values = xmlTestSteps.getAvailableValuesForSteps();
 							for (String value : values) {
 								logger.debug("value: " + value);
+								logger.debug("message: "+nse.getMessage());
 								if (nse.getMessage().contains(value)) {
 									throwException = false;
 									break;
