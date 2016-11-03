@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<properties>
-		<xmlium.version>0.1.0</xmlium.version>
+		<xmlium.version>0.1.2-SNAPSHOT</xmlium.version>
 	</properties>
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.xmlium</groupId>
@@ -70,28 +70,39 @@
 							<packageName>org.xmlium.testsuite</packageName>
 						</configuration>
 					</plugin>
-					<!-- plugin>
-						<groupId>com.coderplus.maven.plugins</groupId>
-						<artifactId>copy-rename-maven-plugin</artifactId>
-						<version>1.0.1</version>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
 						<executions>
 							<execution>
-								<id>rename-file</id>
-								<phase>install</phase>
+								<id>attach-sources</id>
 								<goals>
-									<goal>rename</goal>
+									<goal>jar</goal>
 								</goals>
-								<configuration>
-									<sourceFile>${project.build.directory}/xmlium-web-0.1.0.jar</sourceFile>
-									<destinationFile>../jens/worldportfolio/selenium-tests/app-bin/xmlium-web-0.1.0.jar</destinationFile>
-								</configuration>
 							</execution>
 						</executions>
-					</plugin -->
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>attach-javadocs</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<!-- plugin> <groupId>com.coderplus.maven.plugins</groupId> <artifactId>copy-rename-maven-plugin</artifactId> 
+						<version>1.0.1</version> <executions> <execution> <id>rename-file</id> <phase>install</phase> 
+						<goals> <goal>rename</goal> </goals> <configuration> <sourceFile>${project.build.directory}/xmlium-web-0.1.0.jar</sourceFile> 
+						<destinationFile>../jens/worldportfolio/selenium-tests/app-bin/xmlium-web-0.1.0.jar</destinationFile> 
+						</configuration> </execution> </executions> </plugin -->
 					<plugin>
 						<groupId>com.mycila</groupId>
-    					<artifactId>license-maven-plugin</artifactId>
-    					<version>3.0</version>
+						<artifactId>license-maven-plugin</artifactId>
+						<version>3.0</version>
 						<configuration>
 							<!-- Template location -->
 							<header>src/main/resources/classesHeader.txt</header>
