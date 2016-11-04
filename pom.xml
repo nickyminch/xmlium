@@ -122,11 +122,6 @@
 							</execution>
 						</executions>
 					</plugin>
-					<!-- plugin> <groupId>com.coderplus.maven.plugins</groupId> <artifactId>copy-rename-maven-plugin</artifactId> 
-						<version>1.0.1</version> <executions> <execution> <id>rename-file</id> <phase>install</phase> 
-						<goals> <goal>rename</goal> </goals> <configuration> <sourceFile>${project.build.directory}/xmlium-web-0.1.0.jar</sourceFile> 
-						<destinationFile>../jens/worldportfolio/selenium-tests/app-bin/xmlium-web-0.1.0.jar</destinationFile> 
-						</configuration> </execution> </executions> </plugin -->
 					<plugin>
 						<groupId>com.mycila</groupId>
 						<artifactId>license-maven-plugin</artifactId>
