@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-     Xmlium, is an extension of selenium-java test framework allowing for tests
+     xmlium-web, is an extension for selenium-java test framework allowing for tests
      to be described in xml files.
 
      The contents of this file are subject GNU Lesser General Public License
@@ -17,7 +17,6 @@
      License.
 
 -->
-
 <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema"  targetNamespace="http://www.xmlium.org/TestCase" xmlns:tns="http://www.xmlium.org/TestCase" elementFormDefault="qualified" xmlns:steps="http://www.xmlium.org/TestSteps">
 	<xs:import schemaLocation="TestSteps.xsd" 
            namespace="http://www.xmlium.org/TestSteps"/>

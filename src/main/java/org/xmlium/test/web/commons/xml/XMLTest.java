@@ -1,5 +1,5 @@
 /**
- *  Xmlium, is an extension of selenium-java test framework allowing for tests
+ *  xmlium-web, is an extension for selenium-java test framework allowing for tests
  *  to be described in xml files.
  *
  *  The contents of this file are subject GNU Lesser General Public License
