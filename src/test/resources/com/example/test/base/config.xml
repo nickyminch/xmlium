@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE testConfig [
+<!DOCTYPE xml [
 <!ENTITY resourcesPathString  "path/to/your/resources">
 <!ENTITY url  "http://localhost:8080/">
 ]>
-<tns:testConfig xmlns:tns="http://www.xmlium.org/TestConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xmlium.org/TestConfig /src/main/xsd/TestConfig.xsd ">
+<tns:testConfig xmlns:tns="http://www.xmlium.org/TestConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xmlium.org /src/main/xsd/TestConfig.xsd ">
      <tns:pathString>&resourcesPathString;</tns:pathString>
      <!-- tns:driverClass>org.openqa.selenium.ie.InternetExplorerDriver</tns:driverClass -->
      <!-- tns:driverClass>org.openqa.selenium.firefox.FirefoxDriver</tns:driverClass -->
