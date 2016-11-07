@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
 <tns:testSteps xmlns:tns="http://www.xmlium.org/TestSteps"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.xmlium.org/TestSteps /src/main/xsd/TestSteps.xsd ">
+	xsi:schemaLocation="http://www.xmlium.org /src/main/xsd/TestSteps.xsd ">
 		<tns:steps>
 			<tns:step>
 				<tns:element>

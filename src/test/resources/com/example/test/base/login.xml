@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE test [
+<!DOCTYPE xml [
 <!ENTITY user  "myTestUser">
 <!ENTITY password  "myTestPassword">
 ]>
