@@ -1,14 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<properties>
-		<xmlium.version>0.1.2.3</xmlium.version>
+		<xmlium.version>0.1.2.4</xmlium.version>
 	</properties>
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.xmlium</groupId>
 	<artifactId>xmlium-web</artifactId>
 	<version>${xmlium.version}</version>
 	<name>xmlium-web</name>
-	<description>xmlium-web is an extension for selenium-java test framework allowing for tests to be described in xml files</description>
+	<description>xmlium-web is an extension for selenium-java test framework allowing automated tests to be described in xml files</description>
     <url>http://xmlium.org</url>
     <developers>
     	<developer>
@@ -29,7 +29,7 @@
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>3.0.0-beta3</version>
+			<version>3.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jvnet.jaxb2_commons</groupId>
