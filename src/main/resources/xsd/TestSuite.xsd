@@ -17,10 +17,10 @@
      License.
 
 -->
-<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.xmlium.org/TestSuite"
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.xmlium.org/TestSuite"
 	xmlns:tns="http://www.xmlium.org/TestSuite" elementFormDefault="qualified"
 	xmlns:config="http://www.xmlium.org/TestConfig">
-<import schemaLocation="TestConfig.xsd" 
+<import schemaLocation="http://www.xmlium.org/TestConfig.xsd" 
            namespace="http://www.xmlium.org/TestConfig"/>
     <complexType name="TestSuite">
     	<sequence>

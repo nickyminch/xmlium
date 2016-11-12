@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<properties>
-		<xmlium.version>0.1.2.4</xmlium.version>
+		<xmlium.version>0.1.2.5</xmlium.version>
 	</properties>
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.xmlium</groupId>
@@ -70,7 +70,7 @@
 					<plugin>
 						<groupId>org.codehaus.mojo</groupId>
 						<artifactId>jaxb2-maven-plugin</artifactId>
-						<version>2.2</version>
+						<version>2.3</version>
 						<dependencies>
 							<dependency>
 								<groupId>org.jvnet.jaxb2_commons</groupId>
@@ -87,8 +87,10 @@
 							</execution>
 						</executions>
 						<configuration>
+							
 							<sources>
-								<source>src/main/resources/xsd</source>
+								<source>src/main/resources/xsd/TestSuite.xsd</source>
+								<source>src/main/resources/xsd/TestCase.xsd</source>
 							</sources>
 							<extension>true</extension>
 							<arguments>
@@ -96,6 +98,7 @@
 							</arguments>
 							<!-- The package of your generated sources -->
 							<packageName>org.xmlium.testsuite</packageName>
+							<clearOutputDir>false</clearOutputDir>
 						</configuration>
 					</plugin>
 					<plugin>
@@ -158,7 +161,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-gpg-plugin</artifactId>
-						<version>1.5</version>
+						<version>1.6</version>
 						<executions>
 							<execution>
 								<id>sign-artifacts</id>

@@ -17,22 +17,22 @@
      License.
 
 -->
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema"  targetNamespace="http://www.xmlium.org/TestCase" xmlns:tns="http://www.xmlium.org/TestCase" elementFormDefault="qualified" xmlns:steps="http://www.xmlium.org/TestSteps">
-	<xs:import schemaLocation="TestSteps.xsd" 
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.xmlium.org/TestCase" xmlns:tns="http://www.xmlium.org/TestCase" elementFormDefault="qualified" xmlns:testSteps="http://www.xmlium.org/TestSteps">
+	<import schemaLocation="http://www.xmlium.org/TestSteps.xsd"
            namespace="http://www.xmlium.org/TestSteps"/>
-    <xs:complexType name="Test">
-    	<xs:choice>
-    		<xs:element name="testSteps" type="steps:StepsType" minOccurs="1" maxOccurs="1"/>
-    		<xs:element name="repeat" type="tns:Repeat" minOccurs="1" maxOccurs="1"/>
-    	</xs:choice>
-    </xs:complexType>
+    <complexType name="Test">
+    	<choice>
+    		<element name="testSteps" type="testSteps:StepsType" minOccurs="1" maxOccurs="1"/>
+    		<element name="repeat" type="tns:Repeat" minOccurs="1" maxOccurs="1"/>
+    	</choice>
+    </complexType>
 
-    <xs:element name="test" type="tns:Test"/>
+    <element name="test" type="tns:Test"/>
 
-	<xs:complexType name="Repeat">
-		<xs:sequence>
-			<xs:element name="repeatCount" type="integer" />
-			<xs:element name="repeatSteps" type="steps:StepsType" minOccurs="1" maxOccurs="1" />
-		</xs:sequence>
-	</xs:complexType>
+	<complexType name="Repeat">
+		<sequence>
+			<element name="repeatCount" type="integer" />
+			<element name="repeatSteps" type="testSteps:StepsType" minOccurs="1" maxOccurs="1" />
+		</sequence>
+	</complexType>
 </schema>

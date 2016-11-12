@@ -1166,13 +1166,11 @@ public class XMLTestSteps {
 
 			if (operand1 != null && operand2 != null && operation != null && !operation.isEmpty()) {
 				BigDecimal value = computeValue(operation, operand1, operand2);
-				Actions actions = new Actions(getSuite().getDriver());
 
 				try {
-					element.clear();
+					element.sendKeys(Keys.chord(Keys.CONTROL, "a"));
+					element.sendKeys( getSuite().getCurrencyFormat().format(value), Keys.ENTER);
 
-					actions.sendKeys(element, Keys.chord(Keys.SHIFT, Keys.HOME, Keys.END, Keys.NULL, getSuite().getCurrencyFormat().format(value))).sendKeys(element, Keys.ENTER).build()
-							.perform();
 				} catch (Exception e1) {
 					logger.error(e, e1);
 					throw e1;
