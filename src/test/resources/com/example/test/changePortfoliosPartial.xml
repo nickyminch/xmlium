@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xml>
-<t:test xmlns:t="http://www.xmlium.org/TestCase"
-		xmlns:tns="http://www.xmlium.org/TestSteps"
+<t:test xmlns:t="http://www.xmlium.org/xsd/1.0/TestCase"
+		xmlns:tns="http://www.xmlium.org/xsd/1.0/TestSteps"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.xmlium.org http://www.xmlium.org/TestCase.xsd">
+	xsi:schemaLocation="http://www.xmlium.org http://www.xmlium.org/xsd/1.0/TestCase.xsd">
 	<t:testSteps>
 		<tns:step>
 			<tns:element>

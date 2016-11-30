@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<tns:testConfig xmlns:tns="http://www.xmlium.org/TestConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xmlium.org/TestConfig http://www.xmlium.org/TestConfig.xsd">
+<tns:testConfig xmlns:tns="http://www.xmlium.org/xsd/1.0/TestConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xmlium.org/xsd/1.0/TestConfig http://www.xmlium.org/xsd/1.0/TestConfig.xsd">
      <!-- tns:driverClass>org.openqa.selenium.ie.InternetExplorerDriver</tns:driverClass -->
      <!-- tns:driverClass>org.openqa.selenium.firefox.FirefoxDriver</tns:driverClass -->
      <tns:driverClass>io.selendroid.client.SelendroidDriver</tns:driverClass>

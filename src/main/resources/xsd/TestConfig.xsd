@@ -17,7 +17,7 @@
      License.
 
 -->
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.xmlium.org/TestConfig" xmlns:tns="http://www.xmlium.org/TestConfig" elementFormDefault="qualified">
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.xmlium.org/xsd/1.0/TestConfig" xmlns:tns="http://www.xmlium.org/xsd/1.0/TestConfig" elementFormDefault="qualified">
    
    	<element name="testConfig" type="tns:Config"/>
    	

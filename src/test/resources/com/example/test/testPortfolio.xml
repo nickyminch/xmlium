@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xml>
-<tns:testSuite xmlns:tns="http://www.xmlium.org/TestSuite" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xmlium.org/TestSuite http://www.xmlium.org/TestSuite.xsd ">
+<tns:testSuite xmlns:tns="http://www.xmlium.org/xsd/1.0/TestSuite" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xmlium.org/xsd/1.0/TestSuite http://www.xmlium.org/xsd/1.0/TestSuite.xsd">
   <tns:testCase>
   	<tns:configFile>/com/example/test/base/config.xml</tns:configFile>
    	<tns:get></tns:get>

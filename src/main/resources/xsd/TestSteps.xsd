@@ -17,7 +17,9 @@
      License.
 
 -->
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.xmlium.org/TestSteps" xmlns:tns="http://www.xmlium.org/TestSteps" elementFormDefault="qualified">
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	targetNamespace="http://www.xmlium.org/xsd/1.0/TestSteps" xmlns:tns="http://www.xmlium.org/xsd/1.0/TestSteps"
+	elementFormDefault="qualified">
 
 	<element name="testSteps" type="tns:StepsType"/>
 	

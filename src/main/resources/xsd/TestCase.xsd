@@ -17,9 +17,9 @@
      License.
 
 -->
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.xmlium.org/TestCase" xmlns:tns="http://www.xmlium.org/TestCase" elementFormDefault="qualified" xmlns:testSteps="http://www.xmlium.org/TestSteps">
-	<import schemaLocation="http://www.xmlium.org/TestSteps.xsd"
-           namespace="http://www.xmlium.org/TestSteps"/>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.xmlium.org/xsd/1.0/TestCase" xmlns:tns="http://www.xmlium.org/xsd/1.0/TestCase" elementFormDefault="qualified" xmlns:testSteps="http://www.xmlium.org/xsd/1.0/TestSteps">
+	<import schemaLocation="http://www.xmlium.org/xsd/1.0/TestSteps.xsd"
+           namespace="http://www.xmlium.org/xsd/1.0/TestSteps"/>
     <complexType name="Test">
     	<choice>
     		<element name="testSteps" type="testSteps:StepsType" minOccurs="1" maxOccurs="1"/>
