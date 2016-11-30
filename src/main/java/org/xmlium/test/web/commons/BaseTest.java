@@ -78,6 +78,9 @@ public class BaseTest extends ResourcesLocator{
 	}
 
 	protected void loadBundles() {
+		if(pathPatternString==null){
+			return;
+		}
 		Pattern properties = Pattern.compile(filePatternString);
 		List<String> files = getPropertyResources(pathPatternString, properties);
 		System.err.println(properties.matcher(filePatternString ).matches());

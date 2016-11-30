@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<t:test xmlns:t="http://www.xmlium.org/TestCase"
+		xmlns:tns="http://www.xmlium.org/TestSteps"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.xmlium.org/TestCase http://www.xmlium.org/TestCase.xsd">
+	<t:testSteps>
+		<tns:steps>
+			<tns:step>
+				<tns:element>
+					<tns:finds>
+					    <tns:find>
+							<tns:byId>
+								<tns:value>my_text_field</tns:value>
+							</tns:byId>
+						</tns:find>
+					</tns:finds>
+					<tns:sendKeys><tns:value>Selendroid</tns:value></tns:sendKeys>
+				</tns:element>
+			</tns:step>
+		</tns:steps>
+	</t:testSteps>
+</t:test>

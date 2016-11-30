@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tns:testSuite xmlns:tns="http://www.xmlium.org/TestSuite" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xmlium.org/TestSuite http://www.xmlium.org/TestSuite.xsd">
+  <tns:testCase>
+  	<tns:configFile>/com/example/test/android/base/configAndroid.xml</tns:configFile>
+   	<tns:currentTest>/com/example/test/android/testOnAndroid.xml</tns:currentTest>
+  </tns:testCase>
+</tns:testSuite>

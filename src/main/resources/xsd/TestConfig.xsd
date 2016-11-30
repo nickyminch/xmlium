@@ -23,11 +23,13 @@
    	
     <complexType name="Config">
     	<sequence>
-    		<element name="pathString" type="string"/>
+    		<element name="pathString" type="string" minOccurs="0"/>
     		<element name="driverClass" type="string"/>
+    		<element name="appId" type="string" minOccurs="0"/>
+    		<element name="appApk" type="string" minOccurs="0"/>
     		<element name="timeout" type="long"/>
     		<element name="timeUnit" type="string"/>
-    		<element name="url" type="string"/>
+    		<element name="url" type="string" minOccurs="0"/>
     		<element name="fluentWaitIgnore" type="tns:FluentWaitIgnore"/>
     		<element name="locale" type="string"/>
     		<element name="delay" type="integer"/>
@@ -42,5 +44,4 @@
      <simpleType name="FluentWaitExceptionsList">
     		<list itemType="string"/>
     </simpleType>
-
 </schema>
