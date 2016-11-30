@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tns:testConfig xmlns:tns="http://www.xmlium.org/TestConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xmlium.org/TestConfig http://www.xmlium.org/TestConfig.xsd">
+     <!-- tns:driverClass>org.openqa.selenium.ie.InternetExplorerDriver</tns:driverClass -->
+     <!-- tns:driverClass>org.openqa.selenium.firefox.FirefoxDriver</tns:driverClass -->
+     <tns:driverClass>io.selendroid.client.SelendroidDriver</tns:driverClass>
+     <tns:appId>io.selendroid.testapp:0.17.0</tns:appId>
+     <tns:appApk>src/main/resources/selendroid-test-app-0.17.0.apk</tns:appApk>
+     <tns:timeout>1</tns:timeout>
+     <tns:timeUnit>SECONDS</tns:timeUnit>
+     <tns:fluentWaitIgnore>
+       <tns:exceptionClassNames>
+       	org.openqa.selenium.NoSuchElementException
+       	org.openqa.selenium.StaleElementReferenceException
+       </tns:exceptionClassNames>
+     </tns:fluentWaitIgnore>
+     <tns:locale>de_DE</tns:locale>
+     <tns:delay>150</tns:delay>
+     <!-- tns:delay>250</tns:delay -->
+</tns:testConfig>

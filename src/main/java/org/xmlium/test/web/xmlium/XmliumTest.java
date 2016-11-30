@@ -16,15 +16,24 @@
  */
 package org.xmlium.test.web.xmlium;
 
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.xmlium.test.web.commons.xml.XMLTest;
 
 public class XmliumTest {
 
-
+	static XMLTest  test = new XMLTest();
 	@Test
 	public void test() throws Exception {
-		XMLTest test = new XMLTest();
 		test.test();
+	}
+	@BeforeClass
+	public static void init() throws Exception{
+		test.prepare();
+	}
+	@AfterClass
+	public static void finish(){
+		test.releaseTest();
 	}
 }

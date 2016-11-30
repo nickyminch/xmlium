@@ -16,13 +16,8 @@
  */
 package org.xmlium.test.web.commons.xml;
 
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Locale;
-import java.util.concurrent.TimeUnit;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
@@ -32,8 +27,6 @@ import javax.xml.parsers.SAXParserFactory;
 import javax.xml.transform.sax.SAXSource;
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.FluentWait;
 import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
 import org.xmlium.test.web.commons.BaseTest;
@@ -47,6 +40,7 @@ public class XMLTestSuite extends BaseTest {
 
 	private TestSuite testSuite = null;
 	private TestCase testCase = new TestCase();
+	private XMLTestConfig config = null;
 	private org.xmlium.test.web.commons.xml.XMLTestCase test = new org.xmlium.test.web.commons.xml.XMLTestCase();
 
 	private boolean errors = false;
@@ -89,7 +83,7 @@ public class XMLTestSuite extends BaseTest {
 			if (testSuite != null) {
 				testCase = testSuite.getTestCase();
 				String configFile = testCase.getConfigFile();
-				XMLTestConfig config = new XMLTestConfig(this, configFile);
+				config = new XMLTestConfig(this, configFile);
 				// extractLocale();
 				loadBundles();
 				getTests().addAll(testSuite.getTestCase().getCurrentTest());
@@ -134,7 +128,9 @@ public class XMLTestSuite extends BaseTest {
 			getDriver().get(getUrl());
 		}
 
-		getDriver().manage().window().maximize();
+		if(!getDriver().getClass().getName().contains("SelendroidDriver")){
+			getDriver().manage().window().maximize();
+		}
 
 		for (String testFile : tests) {
 			test.reset();
@@ -157,5 +153,9 @@ public class XMLTestSuite extends BaseTest {
 
 	public void setTests(List<String> tests) {
 		this.tests = tests;
+	}
+
+	XMLTestConfig getConfig() {
+		return config;
 	}
 }

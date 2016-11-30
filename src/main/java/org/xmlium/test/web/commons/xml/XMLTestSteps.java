@@ -550,13 +550,13 @@ public class XMLTestSteps {
 					logger.debug(e.getSendKeys());
 					//Actions actions = new Actions(getSuite().getDriver());
 
-					if (e.getSendKeys().isRemoveOld()) {
+					if ( e.getSendKeys().isRemoveOld()!=null && e.getSendKeys().isRemoveOld()) {
 						element.clear();
 					}
 
 					element.sendKeys(value);
 
-					if (e.getSendKeys().isPressEnter()) {
+					if (e.getSendKeys().isPressEnter()!=null && e.getSendKeys().isPressEnter()) {
 						element.sendKeys(Keys.ENTER);
 					}
 				}
@@ -565,13 +565,13 @@ public class XMLTestSteps {
 					logger.debug(e.getSendKeys());
 					//Actions actions = new Actions(getSuite().getDriver());
 
-					if (e.getSendKeys().isRemoveOld()) {
+					if ( e.getSendKeys().isRemoveOld()!=null && e.getSendKeys().isRemoveOld()) {
 						element.clear();
 					}
 
 					element.sendKeys(value);
 
-					if (e.getSendKeys().isPressEnter()) {
+					if (e.getSendKeys().isPressEnter()!=null && e.getSendKeys().isPressEnter()) {
 						element.sendKeys(Keys.ENTER);
 					}
 				}

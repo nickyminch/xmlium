@@ -19,6 +19,7 @@ package org.xmlium.test.web.commons.xml;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.lang.reflect.Method;
 import java.util.Locale;
 import java.util.Properties;
 
@@ -28,9 +29,17 @@ public class XMLTest{
 	private static final Logger logger = Logger.getLogger(XMLTest.class.getSimpleName());
 	private XMLTestSuite test = new XMLTestSuite();
 
-	public void test() throws Exception{
+	public void prepare() throws Exception{
 		try {
 			init();
+		} catch (Exception e) {
+			logger.error(e.getMessage(), e);
+			throw e;
+		}
+	}
+	
+	public void test() throws Exception{
+		try {
 			test.test();
 		} catch (Exception e) {
 			logger.error(e.getMessage(), e);
@@ -66,6 +75,22 @@ public class XMLTest{
 		} catch (Exception e) {
 			logger.error(e.getMessage(), e);
 			throw e;
+		}
+	}
+	
+	public void releaseTest(){
+		if(test.getConfig()==null){
+			return;
+		}
+		Object server = test.getConfig().getSelendroidServer();
+		if(server!=null){
+			try {
+				Method m = server.getClass().getDeclaredMethod("stopSelendroid");
+				m.invoke(server, null);
+			} catch (Exception e) {
+				logger.error(e.getMessage(), e);
+				throw new RuntimeException(e);
+			} 			
 		}
 	}
 }

@@ -59,13 +59,11 @@
     			minOccurs="0">
     		</element>
     		<element name="click" type="boolean" default="true"
-    			minOccurs="0">
-    		</element>
+    			minOccurs="0" maxOccurs="1"/>
     		<element name="moveX" type="int"
-    			minOccurs="0" maxOccurs="1">
-    		</element>
-    		<element name="element" type="tns:Element"/>
-    		<element name="changeState" type="tns:WaitFor"/>
+    			minOccurs="0" maxOccurs="1"/>
+    		<element name="element" type="tns:Element" minOccurs="0"/>
+    		<element name="changeState" type="tns:WaitFor" minOccurs="0"/>
     		<element name="checkTextEquals" type="tns:CheckEqualsToString" minOccurs="0"/>
     		<element name="store" type="tns:Store" minOccurs="0"/>
     	</sequence>
@@ -154,8 +152,8 @@
     <complexType name="SendKeys">
     	<sequence>
     		<element name="value" type="string"/>
-    		<element name="removeOld" type="boolean"/>
-    		<element name="pressEnter" type="boolean"/>
+    		<element name="removeOld" type="boolean" minOccurs="0"/>
+    		<element name="pressEnter" type="boolean" minOccurs="0"/>
     	</sequence>
     </complexType>
 

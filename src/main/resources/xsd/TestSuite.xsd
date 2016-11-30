@@ -33,7 +33,7 @@
     <complexType name="TestCase">
     	<sequence>
     		<element name="configFile" type="anyURI" minOccurs="1" maxOccurs="1"/>
-    		<element name="get" type="tns:Get"/>
+    		<element name="get" type="tns:Get" minOccurs="0"/>
     		<element name="currentTest" type="anyURI" minOccurs="1" maxOccurs="unbounded"/>
     	</sequence>
     </complexType>

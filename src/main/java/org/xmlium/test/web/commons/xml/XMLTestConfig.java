@@ -18,6 +18,7 @@ package org.xmlium.test.web.commons.xml;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.lang.reflect.Method;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Iterator;
@@ -33,6 +34,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.xmlium.testsuite.Config;
 import org.xmlium.testsuite.ObjectFactory;
+
 
 @SuppressWarnings("restriction")
 public class XMLTestConfig {
@@ -70,10 +72,52 @@ public class XMLTestConfig {
 		} finally {
 		}
 	}
+	
+	Object selendroidServer = null;
+//	SelendroidLauncher selendroidServer = null;
 
 	protected void loadConfig() throws Exception{
 		try {
-			getSuite().setDriver((WebDriver) Class.forName(config.getDriverClass()).newInstance());
+			String driverClass = config.getDriverClass();
+			if(driverClass.contains("SelendroidDriver")){
+				if (selendroidServer != null) {
+					Method m = selendroidServer.getClass().getDeclaredMethod("stopSelendroid");
+				    m.invoke(selendroidServer, null);
+				}
+				Object sdConfig = Class.forName("io.selendroid.standalone.SelendroidConfiguration").newInstance();
+				// Add the selendroid-test-app to the standalone server
+				Method m = sdConfig.getClass().getDeclaredMethod("addSupportedApp", String.class);
+				m.invoke(sdConfig, config.getAppApk());
+				//config.addSupportedApp("src/main/resources/selendroid-test-app-0.17.0.apk");
+				
+				selendroidServer = Class.forName("io.selendroid.standalone.SelendroidLauncher").getConstructor(sdConfig.getClass()).newInstance(sdConfig);
+				Method m2 = selendroidServer.getClass().getDeclaredMethod("launchSelendroid");
+				m2.invoke(selendroidServer, null);
+				
+				String capabilitiesClass = "io.selendroid.common.SelendroidCapabilities";
+				Class capabilitiesClz = Class.forName(capabilitiesClass);
+				Object caps = capabilitiesClz.getConstructor(String.class).newInstance(config.getAppId());
+
+				Class driverClz = Class.forName(config.getDriverClass());
+				getSuite().setDriver((WebDriver) driverClz.getConstructor(org.openqa.selenium.Capabilities.class).newInstance(caps));
+			
+//				if (selendroidServer != null) {
+//				      selendroidServer.stopSelendroid();
+//				    }
+//				    SelendroidConfiguration configDroid = new SelendroidConfiguration();
+//				    configDroid.addSupportedApp(config.getAppApk());
+////				    configDroid.addSupportedApp("src/main/resources/selendroid-test-app-0.17.0.apk");
+//				    selendroidServer = new SelendroidLauncher(configDroid);
+//				    selendroidServer.launchSelendroid();
+//
+////				    SelendroidCapabilities caps =
+////				        new SelendroidCapabilities("io.selendroid.testapp:0.17.0");
+//				    SelendroidCapabilities caps =
+//					        new SelendroidCapabilities(config.getAppId());
+//				getSuite().setDriver(new SelendroidDriver(caps));
+			}else {
+				getSuite().setDriver((WebDriver) Class.forName(config.getDriverClass()).newInstance());
+			}
 			getSuite().setTimeout(config.getTimeout());
 			getSuite().setUrl(config.getUrl());
 			if (config.getLocale() != null && !config.getLocale().isEmpty()) {
@@ -113,5 +157,9 @@ public class XMLTestConfig {
 
 	public XMLTestSuite getSuite() {
 		return suite;
+	}
+
+	Object getSelendroidServer() {
+		return selendroidServer;
 	}
 }
