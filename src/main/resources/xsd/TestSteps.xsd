@@ -41,6 +41,8 @@
 	    		<element name="select" type="tns:Select"/>
 	    		<element name="prettySelect" type="tns:PrettySelect"/>
 	    		<element name="switchTo" type="tns:SwitchTo"/>
+	    		<element name="back" type="boolean"/>
+	    		<element name="forward" type="boolean"/>
 	    	</choice>
 	    	<element name="load" type="tns:Load"  maxOccurs="1" minOccurs="0"/>
 	    	<element name="sleepAfter" type="integer"  maxOccurs="1" minOccurs="0"/>
