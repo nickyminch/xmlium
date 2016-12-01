@@ -108,7 +108,7 @@ public class XMLTestSuite extends BaseTest {
 		}
 	}
 
-	void test() throws Exception{
+	void initTestSuite(){
 		if (errors) {
 			throw new RuntimeException("errors: " + errors);
 		}
@@ -131,7 +131,9 @@ public class XMLTestSuite extends BaseTest {
 		if(!getDriver().getClass().getName().contains("SelendroidDriver")){
 			getDriver().manage().window().maximize();
 		}
-
+	}
+	void test() throws Exception{
+		initTestSuite();
 		for (String testFile : tests) {
 			test.reset();
 			logger.info("Running test file: "+testFile);

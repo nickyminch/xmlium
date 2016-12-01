@@ -165,10 +165,10 @@ public class XMLTestSteps {
 			JavascriptExecutor js = (JavascriptExecutor) getSuite().getDriver();
 			js.executeScript("window.scrollTo(" + step.getScrollX() + ", " + step.getScrollY() + ");");
 		}
-		if(step.isBack()){
+		if(step.isBack()!=null && step.isBack()){
 			getSuite().getDriver().navigate().back();
 		}
-		if(step.isForward()){
+		if(step.isForward()!=null && step.isForward()){
 			getSuite().getDriver().navigate().forward();
 		}
 		Element e = null;
