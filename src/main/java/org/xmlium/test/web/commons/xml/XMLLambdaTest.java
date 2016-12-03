@@ -56,8 +56,13 @@ public class XMLLambdaTest{
 		try {
 			init();
 			SuiteNamedImpl suiteImpl = new SuiteNamedImpl();
-			Executable testSuite = () -> suiteImpl.execute(suite, suite.getUrl());
-			tests.add(DynamicTest.dynamicTest(suite.getUrl(), testSuite));
+			String url = suite.getUrl();
+			if(url==null){
+				url = "main";
+			}
+			final String testUrl = url;
+			Executable testSuite = () -> suiteImpl.execute(suite, testUrl);
+			tests.add(DynamicTest.dynamicTest(testUrl, testSuite));
 			List<String> tests = getSuite().getTests();
 			for(String test: tests){
 				λ( getSuite(), test);

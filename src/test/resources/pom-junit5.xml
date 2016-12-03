@@ -13,12 +13,6 @@
 			<version>4.11</version>
 		</dependency>
 		<dependency>
-			<groupId>de.worldportfolio</groupId>
-			<artifactId>webclient</artifactId>
-			<version>1.0-SNAPSHOT</version>
-			<type>pom</type>
-		</dependency>
-		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-api</artifactId>
 			<version>5.0.0-M3</version>
