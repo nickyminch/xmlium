@@ -70,6 +70,7 @@
     		<element name="changeState" type="tns:WaitFor" minOccurs="0"/>
     		<element name="checkTextEquals" type="tns:CheckEqualsToString" minOccurs="0"/>
     		<element name="store" type="tns:Store" minOccurs="0"/>
+    		<element name="unformat" type="boolean" minOccurs="0" maxOccurs="1"/>
     	</sequence>
     	<attribute name="checkNullElement" type="boolean" default="false"/>
     </complexType>
