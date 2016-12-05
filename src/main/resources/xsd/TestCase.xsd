@@ -25,7 +25,7 @@
     		<element name="testSteps" type="testSteps:StepsType" minOccurs="1" maxOccurs="1"/>
     		<element name="repeat" type="tns:Repeat" minOccurs="1" maxOccurs="1"/>
     	</choice>
-    </complexType>
+    </complexType>    
 
     <element name="test" type="tns:Test"/>
 

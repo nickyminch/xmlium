@@ -3,7 +3,7 @@
 <!ENTITY resourcesPathString  "path/to/your/resources">
 <!ENTITY url  "http://localhost:8080/">
 ]>
-<tns:testConfig xmlns:tns="http://www.xmlium.org/xsd/1.0/TestConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xmlium.org/xsd/1.0/TestConfig http://www.xmlium.org/xsd/1.0/TestConfig.xsd">
+<tns:testConfig xmlns:tns="http://www.xmlium.org/xsd/1.0/TestConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xmlium.org http://www.xmlium.org/xsd/1.0/TestConfig.xsd">
      <tns:pathString>&resourcesPathString;</tns:pathString>
      <!-- tns:driverClass>org.openqa.selenium.ie.InternetExplorerDriver</tns:driverClass -->
      <!-- tns:driverClass>org.openqa.selenium.firefox.FirefoxDriver</tns:driverClass -->
@@ -20,4 +20,5 @@
      <tns:locale>de_DE</tns:locale>
      <tns:delay>150</tns:delay>
      <!-- tns:delay>250</tns:delay -->
+     <tns:unformat/>
 </tns:testConfig>

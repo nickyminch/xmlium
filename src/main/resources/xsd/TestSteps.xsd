@@ -90,6 +90,7 @@
 	    		<element name="byCssSelector" type="tns:ByCSSSelector"/>
 	    	</choice>
     	<attribute name="catchException" default="false" type="boolean"/>
+    	<attribute name="unformat" type="boolean"/>
     </complexType>
 
     <complexType name="ById">
@@ -119,6 +120,7 @@
 	    		<element name="byCssSelector" type="tns:ByCSSSelector"/>
     	</choice>
     	<attribute name="catchException" default="false" type="boolean"/>
+     	<attribute name="unformat" type="boolean"/>
     </complexType>
 
     <complexType name="SwitchTo">

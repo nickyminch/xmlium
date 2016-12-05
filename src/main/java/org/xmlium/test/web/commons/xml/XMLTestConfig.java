@@ -162,4 +162,8 @@ public class XMLTestConfig {
 	Object getSelendroidServer() {
 		return selendroidServer;
 	}
+
+	public Config getConfig() {
+		return config;
+	}
 }

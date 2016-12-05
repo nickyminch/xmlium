@@ -276,10 +276,10 @@ public class XMLTestSteps {
 									String text = "";
 									if (scrollAreaFinds.getFind() != null
 											&& scrollAreaFinds.getFind().getByXPath() != null) {
-										text = unformatValue(scrollAreaFinds.getFind().getByXPath().getValue());
+										text = unformatValue(scrollAreaFinds.getFind().isUnformat(), scrollAreaFinds.getFind().getByXPath().getValue());
 									} else if (scrollAreaFinds.getWaitFor() != null
 											&& scrollAreaFinds.getWaitFor().getByXPath() != null) {
-										text = unformatValue(scrollAreaFinds.getWaitFor().getByXPath().getValue());
+										text = unformatValue(scrollAreaFinds.getWaitFor().isUnformat(), scrollAreaFinds.getWaitFor().getByXPath().getValue());
 									}
 
 									throw new RuntimeException("scrollArea not found: " + text);
@@ -382,10 +382,10 @@ public class XMLTestSteps {
 								if (scrollAreaFinds.getFind() != null || scrollAreaFinds.getWaitFor() != null) {
 									if (scrollAreaFinds.getFind() != null
 											&& scrollAreaFinds.getFind().getByXPath() != null) {
-										scrollAreaXPath = unformatValue(scrollAreaFinds.getFind().getByXPath().getValue());
+										scrollAreaXPath = unformatValue(scrollAreaFinds.getFind().isUnformat(), scrollAreaFinds.getFind().getByXPath().getValue());
 									} else if (scrollAreaFinds.getWaitFor() != null
 											&& scrollAreaFinds.getWaitFor().getByXPath() != null) {
-										scrollAreaXPath = unformatValue(scrollAreaFinds.getWaitFor().getByXPath().getValue());
+										scrollAreaXPath = unformatValue(scrollAreaFinds.getWaitFor().isUnformat(), scrollAreaFinds.getWaitFor().getByXPath().getValue());
 									}
 									// throw new RuntimeException("scrollArea
 									// not found: " + text);
@@ -550,7 +550,15 @@ public class XMLTestSteps {
 
 	protected void checkSendKeys(Element e, WebElement element) {
 		if (e.getSendKeys() != null) {
-			String value = checkValue(unformatValue(e.getSendKeys().getValue()));
+			Boolean unformat = false;
+			if(e.getFinds().getFind()!=null){
+				unformat = e.getFinds().getFind().isUnformat();
+			}else{
+				if(e.getFinds().getWaitFor()!=null){
+					unformat = e.getFinds().getWaitFor().isUnformat();
+				}
+			}
+			String value = checkValue(unformatValue(unformat, e.getSendKeys().getValue()));
 			if (e.isCheckNullElement()) {
 				if (element != null) {
 					logger.debug(e.getSendKeys());
@@ -647,11 +655,11 @@ public class XMLTestSteps {
 		return element;
 	}
 
-	protected By getByXPath(ByXPath xpath) {
+	protected By getByXPath(Boolean unformat, ByXPath xpath) {
 		if (xpath.getValue() != null) {
-			return By.xpath(unformatValue(xpath.getValue()));
+			return By.xpath(unformatValue(unformat, xpath.getValue()));
 		} else if (xpath.getIndexedValue() != null) {
-			return getByIndexedValue(xpath, unformatValue(xpath.getIndexedValue()));
+			return getByIndexedValue(xpath, unformatValue(unformat, xpath.getIndexedValue()));
 		} else {
 			throw new IllegalArgumentException("ByXpath value missing");
 		}
@@ -727,16 +735,16 @@ public class XMLTestSteps {
 			return By.id(wFor.getById().getValue());
 		}
 		if (wFor.getByLinkText() != null) {
-			String value = checkValue(unformatValue(wFor.getByLinkText().getValue()));
+			String value = checkValue(unformatValue(wFor.isUnformat(), wFor.getByLinkText().getValue()));
 			return By.linkText(value);
 		}
 		if (wFor.getByName() != null) {
-			return By.name(unformatValue(wFor.getByName().getValue()));
+			return By.name(unformatValue(wFor.isUnformat(), wFor.getByName().getValue()));
 		}
 		if (wFor.getByXPath() != null) {
-			return getByXPath(wFor.getByXPath());
+			return getByXPath(wFor.isUnformat(), wFor.getByXPath());
 		} else if (wFor.getByCssSelector() != null) {
-			return getBy(wFor.getByCssSelector());
+			return getBy(wFor.isUnformat(), wFor.getByCssSelector());
 		} else {
 			throw new IllegalArgumentException("unknown: " + wFor);
 		}
@@ -755,24 +763,24 @@ public class XMLTestSteps {
 		}
 	}
 
-	protected By getBy(ByCSSSelector cssSelector) {
-		return By.cssSelector(unformatValue(cssSelector.getValue()));
+	protected By getBy(Boolean unformat, ByCSSSelector cssSelector) {
+		return By.cssSelector(unformatValue(unformat, cssSelector.getValue()));
 	}
 
 	protected By getBy(Find f) {
 		if (f.getById() != null) {
 			logger.debug(f.getById().getValue());
-			return By.id(unformatValue(f.getById().getValue()));
+			return By.id(unformatValue(f.isUnformat(), f.getById().getValue()));
 		}
 		if (f.getByLinkText() != null) {
-			String value = checkValue(unformatValue(f.getByLinkText().getValue()));
+			String value = checkValue(unformatValue(f.isUnformat(), f.getByLinkText().getValue()));
 			return By.linkText(value);
 		}
 		if (f.getByName() != null) {
-			return By.name(unformatValue(f.getByName().getValue()));
+			return By.name(unformatValue(f.isUnformat(), f.getByName().getValue()));
 		}
 		if (f.getByXPath() != null) {
-			return getByXPath(f.getByXPath());
+			return getByXPath(f.isUnformat(), f.getByXPath());
 		} else {
 			throw new IllegalArgumentException("unknown: " + f);
 		}
@@ -962,19 +970,19 @@ public class XMLTestSteps {
 
 		if (f != null) {
 			if (f.getById() != null && f.getById().getValue() != null && !f.getById().getValue().isEmpty()) {
-				retValues.add(unformatValue(f.getById().getValue()));
+				retValues.add(unformatValue(f.isUnformat(), f.getById().getValue()));
 			}
 			if (f.getByLinkText() != null && f.getByLinkText().getValue() != null
 					&& !f.getByLinkText().getValue().isEmpty()) {
-				retValues.add(unformatValue(f.getByLinkText().getValue()));
+				retValues.add(unformatValue(f.isUnformat(), f.getByLinkText().getValue()));
 			}
 
 			if (f.getByName() != null && f.getByName().getValue() != null && !f.getByName().getValue().isEmpty()) {
-				retValues.add(unformatValue(f.getByName().getValue()));
+				retValues.add(unformatValue(f.isUnformat(), f.getByName().getValue()));
 			}
 
 			if (f.getByXPath() != null && f.getByXPath().getValue() != null && !f.getByXPath().getValue().isEmpty()) {
-				retValues.add(unformatValue(f.getByXPath().getValue()));
+				retValues.add(unformatValue(f.isUnformat(), f.getByXPath().getValue()));
 			}
 		}
 
@@ -982,21 +990,21 @@ public class XMLTestSteps {
 		if (waitFor != null) {
 			if (waitFor.getById() != null && waitFor.getById().getValue() != null
 					&& !waitFor.getById().getValue().isEmpty()) {
-				retValues.add(unformatValue(waitFor.getById().getValue()));
+				retValues.add(unformatValue(waitFor.isUnformat(), waitFor.getById().getValue()));
 			}
 			if (waitFor.getByLinkText() != null && waitFor.getByLinkText().getValue() != null
 					&& !waitFor.getByLinkText().getValue().isEmpty()) {
-				retValues.add(unformatValue(waitFor.getByLinkText().getValue()));
+				retValues.add(unformatValue(waitFor.isUnformat(), waitFor.getByLinkText().getValue()));
 			}
 
 			if (waitFor.getByName() != null && waitFor.getByName().getValue() != null
 					&& !waitFor.getByName().getValue().isEmpty()) {
-				retValues.add(unformatValue(waitFor.getByName().getValue()));
+				retValues.add(unformatValue(waitFor.isUnformat(), waitFor.getByName().getValue()));
 			}
 
 			if (waitFor.getByXPath() != null && waitFor.getByXPath().getValue() != null
 					&& !waitFor.getByXPath().getValue().isEmpty()) {
-				retValues.add(unformatValue(waitFor.getByXPath().getValue()));
+				retValues.add(unformatValue(waitFor.isUnformat(), waitFor.getByXPath().getValue()));
 			}
 		}
 		return retValues;
@@ -1021,10 +1029,18 @@ public class XMLTestSteps {
 		}
 
 		retValues.addAll(getFindsValues(elem.getFinds()));
+		Boolean unformat = false;
+		if(elem.getFinds().getFind()!=null){
+			unformat = elem.getFinds().getFind().isUnformat();
+		}else{
+			if(elem.getFinds().getWaitFor()!=null){
+				unformat = elem.getFinds().getWaitFor().isUnformat();
+			}
+		}
 		PrettySelectBy selectBy = elem.getSelectBy();
 		if (selectBy != null) {
-			retValues.add(unformatValue(selectBy.getByVisibleText()));
-			retValues.add(unformatValue(selectBy.getOptionsClasses()));
+			retValues.add(unformatValue(unformat, selectBy.getByVisibleText()));
+			retValues.add(unformatValue(unformat, selectBy.getOptionsClasses()));
 			retValues.addAll(getFindsValues(selectBy.getArrowArea()));
 			retValues.addAll(getFindsValues(selectBy.getScrollArea()));
 		}
@@ -1040,9 +1056,17 @@ public class XMLTestSteps {
 		}
 
 		retValues.addAll(getFindsValues(elem.getFinds()));
+		Boolean unformat = false;
+		if(elem.getFinds().getFind()!=null){
+			unformat = elem.getFinds().getFind().isUnformat();
+		}else{
+			if(elem.getFinds().getWaitFor()!=null){
+				unformat = elem.getFinds().getWaitFor().isUnformat();
+			}
+		}
 		SelectBy selectBy = elem.getSelectBy();
 		if (selectBy != null) {
-			retValues.add(unformatValue(selectBy.getByVisibleText()));
+			retValues.add(unformatValue(unformat, selectBy.getByVisibleText()));
 		}
 
 		return retValues;
@@ -1071,7 +1095,15 @@ public class XMLTestSteps {
 			if (strValue == null || strValue.isEmpty()) {
 				throw new RuntimeException(e.toString() + "\n value attribute is empty or null!");
 			}
-			elementValuesMap.put(unformatValue(e.getStoreValue().getKey()), strValue);
+			Boolean unformat = false;
+			if(e.getFinds().getFind()!=null){
+				unformat = e.getFinds().getFind().isUnformat();
+			}else{
+				if(e.getFinds().getWaitFor()!=null){
+					unformat = e.getFinds().getWaitFor().isUnformat();
+				}
+			}
+			elementValuesMap.put(unformatValue(unformat, e.getStoreValue().getKey()), strValue);
 		} else if (e.getStoreValue() != null && e.getStoreValue().getKey() == null) {
 			throw new RuntimeException(e.toString() + "\n key==null!");
 		}
@@ -1083,20 +1115,30 @@ public class XMLTestSteps {
 			BigDecimal operand2 = null;
 			String operation = null;
 
+			Boolean unformat = false;
+			if(e.getFinds().getFind()!=null){
+				unformat = e.getFinds().getFind().isUnformat();
+			}else{
+				if(e.getFinds().getWaitFor()!=null){
+					unformat = e.getFinds().getWaitFor().isUnformat();
+				}
+			}
+
 			Values values = e.getSetValue().getKeys();
 			List<String> keys = values.getKey();
 			if (keys == null) {
 				throw new RuntimeException(e.toString() + "\n no values " + e + "!");
 			}
-			String strValueExpression = unformatValue(e.getSetValue().getValueExpression());
+
+			String strValueExpression = unformatValue(unformat, e.getSetValue().getValueExpression());
 			if (strValueExpression == null || strValueExpression.isEmpty()) {
 				throw new RuntimeException(e.toString() + " valueExpressionis null or empty!");
 			}
 			String oldValue1 = null;
 			String oldValue2 = null;
 			if (keys.size() == 2) {
-				oldValue1 = elementValuesMap.get(unformatValue(values.getKey().get(0)));
-				oldValue2 = elementValuesMap.get(unformatValue(values.getKey().get(1)));
+				oldValue1 = elementValuesMap.get(unformatValue(unformat, values.getKey().get(0)));
+				oldValue2 = elementValuesMap.get(unformatValue(unformat, values.getKey().get(1)));
 				if (oldValue1 == null) {
 					throw new RuntimeException(e.toString() + "\n no value for key=" + values.getKey().get(0) + "!");
 				}
@@ -1104,9 +1146,9 @@ public class XMLTestSteps {
 					throw new RuntimeException(e.toString() + "\n no value for key=" + values.getKey().get(1) + "!");
 				}
 			} else if (keys.size() == 1) {
-				oldValue1 = elementValuesMap.get(unformatValue(values.getKey().get(0)));
+				oldValue1 = elementValuesMap.get(unformatValue(unformat, values.getKey().get(0)));
 				if (oldValue1 == null) {
-					throw new RuntimeException(e.toString() + "\n no value for key=" + unformatValue(values.getKey().get(0)) + "!");
+					throw new RuntimeException(e.toString() + "\n no value for key=" + unformatValue(unformat, values.getKey().get(0)) + "!");
 				}
 			}
 			if (oldValue1 != null && oldValue2 != null) {
@@ -1246,12 +1288,24 @@ public class XMLTestSteps {
 		return suite;
 	}
 	
+	public String unformatValue(Boolean unformat, String v){
+		if(getSuite().getConfig().getConfig().isUnformat()!=null){
+			if(getSuite().getConfig().getConfig().isUnformat()){
+				if(unformat==null || unformat){
+					return unformatValue(v);
+				}
+			}
+		}else if(unformat!=null && unformat){
+			return unformatValue(v);
+		}
+		return v;
+	}
+
 	public static String unformatValue(String v){
 		String s = unformatValueRemoveFormat(v);
 		s = unformatValueRemoveSpaces(s);
 		return s;
 	}
-
 	protected static final Pattern removeTabsAndNewLinesPattern  = Pattern.compile("([.&&^\n&&^\t]*)(\n\t*)(\t*)(.*)");
 
 	public static String unformatValueRemoveFormat(String v){
