@@ -23,16 +23,17 @@
    	
     <complexType name="Config">
     	<sequence>
-    		<element name="pathString" type="string" minOccurs="0"/>
-    		<element name="driverClass" type="string"/>
-    		<element name="appId" type="string" minOccurs="0"/>
-    		<element name="appApk" type="string" minOccurs="0"/>
-    		<element name="timeout" type="long"/>
-    		<element name="timeUnit" type="string"/>
-    		<element name="url" type="string" minOccurs="0"/>
-    		<element name="fluentWaitIgnore" type="tns:FluentWaitIgnore"/>
-    		<element name="locale" type="string"/>
-    		<element name="delay" type="integer"/>
+    		<element name="pathString" type="string" minOccurs="0" maxOccurs="1"/>
+    		<element name="driverClass" type="string" maxOccurs="1"/>
+    		<element name="appId" type="string" minOccurs="0" maxOccurs="1"/>
+    		<element name="appApk" type="string" minOccurs="0" maxOccurs="1"/>
+    		<element name="timeout" type="long" maxOccurs="1"/>
+    		<element name="timeUnit" type="string" maxOccurs="1"/>
+    		<element name="url" type="string" minOccurs="0" maxOccurs="1"/>
+    		<element name="fluentWaitIgnore" type="tns:FluentWaitIgnore" maxOccurs="1"/>
+    		<element name="locale" type="string" maxOccurs="1"/>
+    		<element name="delay" type="integer" maxOccurs="1"/>
+    		<element name="unformat" type="boolean" minOccurs="0" maxOccurs="1"/>
     	</sequence>
     </complexType>
     <complexType name="FluentWaitIgnore">

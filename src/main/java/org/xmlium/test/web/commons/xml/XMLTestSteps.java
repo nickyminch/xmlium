@@ -1246,12 +1246,24 @@ public class XMLTestSteps {
 		return suite;
 	}
 	
+	public String unformatValue(Element e, String v){
+		if(getSuite().getConfig().getConfig().isUnformat()!=null){
+			if(getSuite().getConfig().getConfig().isUnformat()){
+				if(e.isUnformat()==null || e.isUnformat() ){
+					return unformatValue(v);
+				}
+			}
+		}else if(e.isUnformat()!=null && e.isUnformat()){
+			return unformatValue(v);
+		}
+		return v;
+	}
+
 	public static String unformatValue(String v){
 		String s = unformatValueRemoveFormat(v);
 		s = unformatValueRemoveSpaces(s);
 		return s;
 	}
-
 	protected static final Pattern removeTabsAndNewLinesPattern  = Pattern.compile("([.&&^\n&&^\t]*)(\n\t*)(\t*)(.*)");
 
 	public static String unformatValueRemoveFormat(String v){
