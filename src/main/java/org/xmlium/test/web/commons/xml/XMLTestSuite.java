@@ -16,6 +16,7 @@
  */
 package org.xmlium.test.web.commons.xml;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,6 +59,10 @@ public class XMLTestSuite extends BaseTest {
 		SAXSource source = null;
 		JAXBElement<TestSuite> unmarshalledObject = null;
 		try {
+			InputStream is = getClass().getResourceAsStream(xmlFileName);
+			if(is==null){
+				throw new NullPointerException("input stream for "+xmlFileName+" is null.");
+			}
 			// 1. We need to create JAXContext instance
 			jaxbContext = JAXBContext.newInstance(ObjectFactory.class);
 
@@ -74,7 +79,7 @@ public class XMLTestSuite extends BaseTest {
 			// 3. Use the Unmarshaller to unmarshal the XML document to get an
 			// instance of JAXBElement.
 			xr = (XMLReader) spf.newSAXParser().getXMLReader();
-			source = new SAXSource(xr, new InputSource(getClass().getResourceAsStream(xmlFileName)));
+			source = new SAXSource(xr, new InputSource(is));
 			unmarshalledObject = (JAXBElement<TestSuite>) unmarshaller.unmarshal(source);
 
 			// 4. Get the instance of the required JAXB Root Class from the

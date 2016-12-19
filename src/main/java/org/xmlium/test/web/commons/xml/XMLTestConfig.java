@@ -55,7 +55,7 @@ public class XMLTestConfig {
 			logger.debug("xmlFileName: " + "'"+xmlFileName+"'");
 			InputStream is = getClass().getResourceAsStream(xmlFileName);
 			if(is==null){
-				throw new FileNotFoundException(xmlFileName+" not found!");
+				throw new NullPointerException("input stream for "+xmlFileName+" is null.");
 			}
 
 			JAXBContext jc = JAXBContext.newInstance(ObjectFactory.class);

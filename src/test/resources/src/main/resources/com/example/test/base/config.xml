@@ -20,5 +20,5 @@
      <tns:locale>de_DE</tns:locale>
      <tns:delay>150</tns:delay>
      <!-- tns:delay>250</tns:delay -->
-     <tns:unformat/>
+     <tns:unformat>true</tns:unformat>
 </tns:testConfig>
