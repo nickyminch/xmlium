@@ -50,7 +50,7 @@ import org.xmlium.testsuite.Steps;
 import org.xmlium.testsuite.StepsType;
 
 public class TestTests extends XMLTestSteps {
-	private static final Logger logger = Logger.getLogger(TestTests.class.getSimpleName());
+	private static final Logger logger = Logger.getLogger(TestTests.class);
 	static StepsType steps;
 	static XMLTestSuite suite = new XMLTestSuite();
 //	public static void main(String[] args) {

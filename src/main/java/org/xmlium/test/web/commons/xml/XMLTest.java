@@ -26,7 +26,7 @@ import java.util.Properties;
 import org.apache.log4j.Logger;
 
 public class XMLTest{
-	private static final Logger logger = Logger.getLogger(XMLTest.class.getSimpleName());
+	private static final Logger logger = Logger.getLogger(XMLTest.class);
 	private XMLTestSuite test = new XMLTestSuite();
 
 	public void prepare() throws Exception{

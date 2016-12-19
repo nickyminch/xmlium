@@ -35,7 +35,7 @@ import org.xmlium.testsuite.Test;
 
 @SuppressWarnings("restriction")
 public class XMLTestCase {
-	private static final Logger logger = Logger.getLogger(XMLTestCase.class.getSimpleName());
+	private static final Logger logger = Logger.getLogger(XMLTestCase.class);
 	private Test test = null;
 	private XMLTestSuite suite = null;
 

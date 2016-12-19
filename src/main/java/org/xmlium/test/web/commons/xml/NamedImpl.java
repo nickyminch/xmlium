@@ -19,7 +19,7 @@ package org.xmlium.test.web.commons.xml;
 import org.apache.log4j.Logger;
 
 public class NamedImpl implements NamedExecutable {
-	static final Logger logger = Logger.getLogger(XMLLambdaTest.class.getSimpleName());
+	static final Logger logger = Logger.getLogger(XMLLambdaTest.class);
 	public void execute(XMLTestSuite suite, String name) throws Throwable{
 		XMLTestCase currentTest = new XMLTestCase();
 		currentTest.reset();

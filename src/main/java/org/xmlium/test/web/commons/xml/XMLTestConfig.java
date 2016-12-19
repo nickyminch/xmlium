@@ -38,7 +38,7 @@ import org.xmlium.testsuite.ObjectFactory;
 
 @SuppressWarnings("restriction")
 public class XMLTestConfig {
-	private static final Logger logger = Logger.getLogger(XMLTestConfig.class.getSimpleName());
+	private static final Logger logger = Logger.getLogger(XMLTestConfig.class);
 
 	XMLTestSuite suite;
 	Config config;

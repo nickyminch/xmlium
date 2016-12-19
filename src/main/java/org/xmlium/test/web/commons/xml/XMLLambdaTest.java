@@ -31,7 +31,7 @@ import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.function.Executable;
 
 public class XMLLambdaTest{
-	private static final Logger logger = Logger.getLogger(XMLLambdaTest.class.getSimpleName());
+	private static final Logger logger = Logger.getLogger(XMLLambdaTest.class);
 
 	XMLTestSuite suite = new XMLTestSuite();
 	private final Collection<DynamicTest> tests = new ArrayList<DynamicTest>();

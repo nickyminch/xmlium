@@ -72,7 +72,7 @@ import com.google.common.base.Function;
 
 @SuppressWarnings("restriction")
 public class XMLTestSteps {
-	private static final Logger logger = Logger.getLogger(XMLTestSteps.class.getSimpleName());
+	private static final Logger logger = Logger.getLogger(XMLTestSteps.class);
 	private XMLTestSuite suite = null;
 	private StepsType stepsObject;
 	private List<StepType> steps = new ArrayList<StepType>();

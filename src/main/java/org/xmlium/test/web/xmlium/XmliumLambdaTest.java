@@ -24,7 +24,7 @@ import org.junit.jupiter.api.TestFactory;
 import org.xmlium.test.web.commons.xml.XMLLambdaTest;
 
 public class XmliumLambdaTest extends XMLLambdaTest {
-	private static final Logger logger = Logger.getLogger(XmliumLambdaTest.class.getSimpleName());
+	private static final Logger logger = Logger.getLogger(XmliumLambdaTest.class);
 
 	public XmliumLambdaTest() {
 		super();
